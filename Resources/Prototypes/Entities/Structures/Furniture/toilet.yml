@@ -106,12 +106,11 @@
   - type: SolutionManager
     solutions:
     - SolutionDrainNormal
-  #- type: SolutionRegeneration - Goobstation - laggy, also who uses toilets?
-  #  solution: tank
-  #  generated:
-  #    reagents:
-  #    - ReagentId: Water
-  #      Quantity: 1
+  - type: SolutionRegeneration
+    generated:
+      reagents:
+      - ReagentId: Water
+        Quantity: 1
   - type: DrainableSolution
     solution: tank
   - type: ReagentTank

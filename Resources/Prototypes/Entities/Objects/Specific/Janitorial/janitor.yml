@@ -97,13 +97,11 @@
     - type: UseDelay
       delay: 1.0
     - type: SolutionRegeneration
-      solution: absorbed
       generated:
         reagents:
         - ReagentId: Water
           Quantity: 15 # Trauma - 5 -> 15
     - type: SolutionPurge
-      solution: absorbed
       preserve:
       - Water
       quantity: 15 # Trauma 10 -> 15

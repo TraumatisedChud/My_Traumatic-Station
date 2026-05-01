@@ -126,7 +126,7 @@ public sealed partial class RocketChairSystem : SharedRocketChairSystem
 
             var vap = Comp<VaporComponent>(vapor);
             var vapEnt = (vapor, vap);
-            _vapor.TryAddSolution(vapEnt, extracted);
+            _solution.TryAddSolution((vapor, Comp<SolutionComponent>(vapor)), extracted);
 
             var speed = comp.VaporVelocity;
             var life = comp.VaporLifetime;

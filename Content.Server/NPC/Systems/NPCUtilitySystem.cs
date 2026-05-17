@@ -295,7 +295,7 @@ public sealed partial class NPCUtilitySystem : EntitySystem
                     !TryComp(targetUid, out WieldableComponent? wieldable))
                     return 1f;
 
-                if (!_wieldable.CanWield(targetUid, wieldable, owner, true, false))
+                if (!_wieldable.CanWield((targetUid, wieldable), owner, true, false))
                     return 0f;
 
                 var beforeWieldEv = new WieldAttemptEvent(owner, targetUid);

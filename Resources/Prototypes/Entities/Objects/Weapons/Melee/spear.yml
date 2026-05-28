@@ -15,7 +15,11 @@
         Blunt: 1
   - type: WeaponClass
     class: Polearm
+  - type: Sharp
   # </Trauma>
+  - type: Tool
+    qualities:
+    - Slicing
   - type: EmbeddableProjectile
     offset: -0.15,0.0
   - type: ThrowingAngle
@@ -39,7 +43,6 @@
         - ItemMask
         restitution: 0.3
         friction: 0.2
-  - type: Sharp
   - type: Sprite
     sprite: Objects/Weapons/Melee/spear.rsi
     layers:

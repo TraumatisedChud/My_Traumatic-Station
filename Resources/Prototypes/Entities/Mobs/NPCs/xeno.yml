@@ -3,7 +3,7 @@
 
 - type: entity
   name: space adder
-  parent: [ AppearanceSpaceAdder, SimpleSpaceMobBase ] # Shitmed
+  parent: [AppearanceSpaceAdder, SimpleSpaceMobBase, BaseSlicingRefinable] # Trauma - added AppearanceSpaceAdder
   id: MobPurpleSnake
   description: A menacing purple snake from Kepler-283c.
   components:
@@ -28,8 +28,8 @@
         Base: dead_purple_snake
       Dead:
         Base: dead_purple_snake
-  - type: Butcherable
-    spawned:
+  - type: ToolRefinable
+    refineResult:
     - id: FoodMeatSnake
       amount: 4
   - type: Grammar
@@ -95,7 +95,7 @@
 
 - type: entity
   name: space adder
-  parent: [ AppearanceSpaceAdder, MobPurpleSnake ] # Shitmed
+  parent: [AppearanceSpaceAdder, MobPurpleSnake, BaseSlicingRefinable] # Trauma - added AppearanceSpaceAdder
   id: MobSmallPurpleSnake
   suffix: small
   description: A smaller version of the menacing purple snake from Kepler-283c.
@@ -114,8 +114,8 @@
         Base: dead_small_purple_snake
       Dead:
         Base: dead_small_purple_snake
-  - type: Butcherable
-    spawned:
+  - type: ToolRefinable
+    refineResult:
     - id: FoodMeatSnake
       amount: 2
   - type: SolutionTransfer

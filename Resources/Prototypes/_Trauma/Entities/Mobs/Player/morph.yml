@@ -2,7 +2,7 @@
 
 - type: entity
   abstract: true
-  parent: SimpleMobBase
+  parent: [ SimpleMobBase, BaseSlicingRefinable ]
   id: MobMorphBase
   name: morph
   description: A revolting, pulsating pile of flesh.
@@ -136,8 +136,8 @@
       - Wall
       - Window
     disguiseProto: ChameleonDisguiseMorph
-  - type: Butcherable
-    spawned:
+  - type: ToolRefinable
+    refineResult:
     - id: FoodMeatDragon
       amount: 2
   - type: TypingIndicator

@@ -161,7 +161,6 @@
   - type: Puller
     #needsHands: false # Trauma - controlled by tail
   - type: Butcherable
-    butcheringType: Spike
     spawned:
     - id: FoodMeatLizard
       amount: 5

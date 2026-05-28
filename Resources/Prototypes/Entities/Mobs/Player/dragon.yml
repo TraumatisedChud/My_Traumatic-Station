@@ -1,5 +1,5 @@
 - type: entity
-  parent: [ AppearanceDragon, SimpleSpaceMobBase, FlyingMobBase ] # Shitmed
+  parent: [ AppearanceDragon, SimpleSpaceMobBase, FlyingMobBase, BaseSlicingRefinable ] # Trauma - added AppearanceDragon
   id: BaseMobDragon
   suffix: ""
   name: space dragon
@@ -148,8 +148,8 @@
     updateInterval: 0.25
     metabolizerTypes: [ Dragon ]
     stages: [ Digestion, Bloodstream ]
-  - type: Butcherable
-    spawned:
+  - type: ToolRefinable
+    refineResult:
     - id: FoodMeatDragon
       amount: 2
   - type: InteractionPopup
@@ -271,10 +271,9 @@
       0: Alive
       200: Dead
   # less meat spawned since it's a lot easier to kill
-  - type: Butcherable
-    spawned:
+  - type: ToolRefinable
+    refineResult:
     - id: FoodMeatDragon
-      amount: 1
   - type: MeleeWeapon
     damage:
       types:

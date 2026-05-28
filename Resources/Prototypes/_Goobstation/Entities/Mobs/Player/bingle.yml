@@ -2,9 +2,9 @@
 
 # Base bingle
 - type: entity
-  name: bingle
+  parent: [ MobSpaceBasic, BaseSlicingRefinable ]
   id: MobBingle
-  parent: MobSpaceBasic
+  name: bingle
   description: bingle
   components:
   - type: Bingle
@@ -118,8 +118,8 @@
   - type: FlashImmunity
   - type: ScannableForPoints # NTR update
     points: 2 # this would be abused so much if i made it more
-  - type: Butcherable
-    spawned:
+  - type: ToolRefinable
+    refineResult:
     - id: FoodMeatBingle
       amount: 3
   - type: PointLight

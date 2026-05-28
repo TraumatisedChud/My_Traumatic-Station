@@ -277,7 +277,6 @@
     thermalRegulationTemperatureThreshold: 2
   #- type: Perishable # Trauma - moved to BaseSpeciesMobOrganic
   - type: Butcherable
-    butcheringType: Spike
     spawned:
     - id: FoodMeat
       amount: 5

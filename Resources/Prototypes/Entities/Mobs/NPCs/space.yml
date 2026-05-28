@@ -74,7 +74,7 @@
 - type: entity
   name: space bear
   id: MobBearSpace
-  parent: [ AppearanceSpaceAnimal, MobSpaceBasic ] # Shitmed
+  parent: [AppearanceSpaceAnimal, MobSpaceBasic, BaseSlicingRefinable] # Trauma - added AppearanceSpaceAnimal
   description: It looks friendly. Why don't you give it a hug?
   components:
   - type: Fauna # Goob
@@ -96,8 +96,8 @@
         Base: bear_dead
       Dead:
         Base: bear_dead
-  - type: Butcherable
-    spawned:
+  - type: ToolRefinable
+    refineResult:
     - id: FoodMeatBear
       amount: 3
     - id: MaterialHideBear
@@ -195,7 +195,7 @@
 - type: entity
   name: space spider
   id: MobSpiderSpace
-  parent: [ AppearanceSpaceAnimal, MobSpaceBasic ] # Shitmed
+  parent: [AppearanceSpaceAnimal, MobSpaceBasic, BaseSlicingRefinable] # Trauma - added AppearanceSpaceAnimal
   description: It's so glowing, it looks dangerous.
   components:
   # <Goob>
@@ -224,8 +224,8 @@
         BaseUnshaded: glow
       Dead:
         Base: spacespider_dead
-  - type: Butcherable
-    spawned:
+  - type: ToolRefinable
+    refineResult:
     - id: FoodMeatSpider
       amount: 2
     - id: EggSpider
@@ -318,7 +318,7 @@
 - type: entity
   name: space cobra
   id: MobCobraSpace
-  parent: [ AppearanceSpaceCobra, MobSpaceBasic ] # Shitmed
+  parent: [AppearanceSpaceCobra, MobSpaceBasic, BaseSlicingRefinable] # Trauma - added AppearanceSpaceCobra
   description: Long fangs and a glowing hood, and the alluring look begs to come closer.
   components:
     # <Trauma>
@@ -363,15 +363,15 @@
           BaseUnshaded: glow
         Dead:
           Base: dead_spacecobra
-    - type: Butcherable
-      spawned:
-        - id: FoodMeatSnake
-          amount: 2
-        - id: UraniumOre1
-          amount: 1
-        - id: ClothingShoesSnakeskinBoots
-          amount: 1
-          prob: 0.3
+    - type: ToolRefinable
+      refineResult:
+      - id: FoodMeatSnake
+        amount: 2
+      - id: UraniumOre1
+        amount: 1
+      - id: ClothingShoesSnakeskinBoots
+        amount: 1
+        prob: 0.3
     - type: Bloodstream
       bloodReferenceSolution:
         reagents:

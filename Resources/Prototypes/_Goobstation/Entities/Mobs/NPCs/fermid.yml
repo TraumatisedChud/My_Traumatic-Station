@@ -1,10 +1,10 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 - type: entity
-  name: fermid
-  id: MobFermidBase
-  parent: [ SimpleSpaceMobBase, MobCombat, AppearanceSpaceAnimal ]
   abstract: true
+  parent: [ AppearanceSpaceAnimal, SimpleSpaceMobBase, BaseSlicingRefinable ]
+  id: MobFermidBase
+  name: fermid
   description: Extremely hostile asteroid-dwelling bugs. Best to avoid them wherever possible.
   components:
   - type: VentCrawler
@@ -30,8 +30,8 @@
   - type: NpcFactionMember
     factions:
       - SimpleHostile
-  - type: Butcherable
-    spawned:
+  - type: ToolRefinable
+    refineResult:
     - id: FoodMeatSpider
       amount: 2
   - type: Bloodstream

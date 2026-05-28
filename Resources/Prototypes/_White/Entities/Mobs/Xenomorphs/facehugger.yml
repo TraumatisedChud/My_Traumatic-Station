@@ -1,7 +1,7 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 - type: entity
-  parent: [ BaseMob, ClothingMaskBase, MobDamageable, BaseXenomorphGhostRole ]
+  parent: [ BaseMob, ClothingMaskBase, MobDamageable, BaseXenomorphGhostRole, BaseSlicingRefinable ]
   id: MobXenomorphFaceHugger
   name: xenomorph facehugger
   description: A writhing nightmare. The facehugger clings to its victim's face, forcibly inserting a xenomorph fetus.
@@ -61,10 +61,9 @@
   - type: TemperatureDamage
     heatDamageThreshold: 360
     coldDamageThreshold: -150
-  - type: Butcherable
-    spawned:
+  - type: ToolRefinable
+    refineResult:
     - id: FoodMeatXeno
-      amount: 1
   - type: FaceHugger
     blacklist:
       components:

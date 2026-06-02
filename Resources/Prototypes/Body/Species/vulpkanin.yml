@@ -214,7 +214,7 @@
       state: creampie_vulpkanin
 
 - type: entity
-  parent: OrganBaseFleshy # Shitmed - Fleshy
+  parent: OrganBaseOrganic
   id: OrganVulpkanin
   abstract: true
   suffix: vulpkanin

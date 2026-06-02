@@ -187,7 +187,7 @@
     baseConeAngle: 360
 
 - type: entity
-  parent: OrganBaseFleshy # Shitmed - Fleshy
+  parent: OrganBaseOrganic
   id: OrganDiona
   abstract: true
   suffix: Diona

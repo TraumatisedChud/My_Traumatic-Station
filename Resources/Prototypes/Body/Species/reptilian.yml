@@ -214,7 +214,7 @@
   #- type: Wagging # Trauma - moved to tail onAdd
 
 - type: entity
-  parent: OrganBaseFleshy # Shitmed - Fleshy
+  parent: OrganBaseOrganic
   id: OrganReptilian
   abstract: true
   suffix: Reptilian

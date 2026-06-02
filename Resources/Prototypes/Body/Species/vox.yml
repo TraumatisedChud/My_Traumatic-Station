@@ -261,7 +261,7 @@
   - type: Wagging
 
 - type: entity
-  parent: OrganBaseFleshy # Shitmed - Fleshy
+  parent: OrganBaseOrganic
   id: OrganVox
   abstract: true
   suffix: Vox

@@ -152,7 +152,7 @@
       state: creampie_arachnid
 
 - type: entity
-  parent: OrganBaseFleshy # Shitmed - Fleshy
+  parent: OrganBaseOrganic
   id: OrganArachnid
   abstract: true
   suffix: Arachnid

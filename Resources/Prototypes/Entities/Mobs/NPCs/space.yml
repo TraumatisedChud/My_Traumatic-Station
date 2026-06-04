@@ -125,9 +125,15 @@
 - type: entity
   name: space kangaroo
   id: MobKangarooSpace
-  parent: [ AppearanceSpaceAnimal, MobSpaceBasic, StripableInventoryBase ] # Shitmed
+  parent: [AppearanceSpaceAnimal, MobSpaceBasic, StripableInventoryBase, BaseSlicingRefinable] # Trauma - added AppearanceSpaceAnimal
   description: It looks friendly. Why don't you give it a hug?
   components:
+  # <Trauma>
+  - type: FootstepModifier
+    footstepSoundCollection:
+      collection: FootstepBounce
+  - type: Fauna
+  # </Trauma>
   - type: Sprite
     drawdepth: Mobs
     sprite: Mobs/Animals/kangaroo.rsi
@@ -166,24 +172,20 @@
   - type: Vocal
     sounds:
       Unsexed: Kangaroo
-  - type: FootstepModifier # Trauma - revert upstream removal
-    footstepSoundCollection:
-      collection: FootstepBounce
   - type: LanguageSpeaker # Einstein Engines - Language
     speaks:
     - Kangaroo
     understands:
     - Kangaroo
     - TauCetiBasic
-  - type: Butcherable
-    spawned:
+  - type: ToolRefinable
+    refineResult:
     - id: FoodMeat
       amount: 1
-  - type: Fauna # Lavaland Change
   - type: MobThresholds
     thresholds:
       0: Alive
-      120: Dead # Lavaland Change: 60 -> 120
+      120: Dead # Trauma - was 60
 
 - type: entity
   id: MobKangarooSpaceSalvage

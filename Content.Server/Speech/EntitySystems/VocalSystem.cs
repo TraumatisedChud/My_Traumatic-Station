@@ -31,23 +31,41 @@ public sealed partial class VocalSystem : EntitySystem
         SubscribeLocalEvent<VocalComponent, ComponentShutdown>(OnShutdown);
         SubscribeLocalEvent<VocalComponent, SexChangedEvent>(OnSexChanged);
         SubscribeLocalEvent<VocalComponent, EmoteEvent>(OnEmote);
-        SubscribeLocalEvent<VocalComponent, ScreamActionEvent>(OnScreamAction);
-        SubscribeLocalEvent<VocalComponent, EmoteSoundsChangedEvent>(OnSoundsChanged); // DeltaV - support for changing vocal sounds on the go. Why it wasn't there in the first place is beyond me.
+        SubscribeLocalEvent<VocalComponent, EmoteActionEvent>(OnEmoteAction);
+    }
+
+    /// <summary>
+    /// Copy this component's datafields from one entity to another.
+    /// This can't use CopyComp because of the ScreamActionEntity DataField, which should not be copied.
+    /// </summary>
+    public void CopyComponent(Entity<VocalComponent?> source, EntityUid target)
+    {
+        if (!Resolve(source, ref source.Comp))
+            return;
+
+        var targetComp = EnsureComp<VocalComponent>(target);
+        targetComp.Sounds = source.Comp.Sounds;
+        targetComp.ScreamId = source.Comp.ScreamId;
+        targetComp.Wilhelm = source.Comp.Wilhelm;
+        targetComp.WilhelmProbability = source.Comp.WilhelmProbability;
+        LoadSounds(target, targetComp);
+
+        Dirty(target, targetComp);
     }
 
     private void OnMapInit(EntityUid uid, VocalComponent component, MapInitEvent args)
     {
         // try to add scream action when vocal comp added
-        _actions.AddAction(uid, ref component.ScreamActionEntity, component.ScreamAction);
+        _actions.AddAction(uid, ref component.EmoteActionEntity, component.EmoteAction);
         LoadSounds(uid, component);
     }
 
     private void OnShutdown(EntityUid uid, VocalComponent component, ComponentShutdown args)
     {
         // remove scream action when component removed
-        if (component.ScreamActionEntity != null)
+        if (component.EmoteActionEntity != null)
         {
-            _actions.RemoveAction(uid, component.ScreamActionEntity);
+            _actions.RemoveAction(uid, component.EmoteActionEntity);
         }
     }
 
@@ -56,20 +74,13 @@ public sealed partial class VocalSystem : EntitySystem
         LoadSounds(uid, component, args.NewSex);
     }
 
-// Begin DeltaV additions
-    private void OnSoundsChanged(EntityUid uid, VocalComponent component, ref EmoteSoundsChangedEvent args)
-    {
-        LoadSounds(uid, component);
-    }
-// End DeltaV additions
-
     private void OnEmote(EntityUid uid, VocalComponent component, ref EmoteEvent args)
     {
         if (args.Handled || !args.Emote.Category.HasFlag(EmoteCategory.Vocal))
             return;
 
         // snowflake case for wilhelm scream easter egg
-        if (args.Emote.ID == component.ScreamId)
+        if (args.Emote == component.ScreamId)
         {
             args.Handled = TryPlayScreamSound(uid, component);
             return;
@@ -98,12 +109,12 @@ public sealed partial class VocalSystem : EntitySystem
         args.Handled = _chat.TryPlayEmoteSound(uid, _proto.Index(sounds), args.Emote);
     }
 
-    private void OnScreamAction(EntityUid uid, VocalComponent component, ScreamActionEvent args)
+    private void OnEmoteAction(EntityUid uid, VocalComponent component, EmoteActionEvent args)
     {
         if (args.Handled)
             return;
 
-        _chat.TryEmoteWithChat(uid, component.ScreamId, voluntary: true); // Goob - emotespam
+        _chat.TryEmoteWithChat(uid, args.Emote, voluntary: true); // Trauma - added voluntary
         args.Handled = true;
     }
 

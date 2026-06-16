@@ -36,12 +36,17 @@
   parent: ClothingNeckBase
   id: ClothingScarfBase
   components:
+  # <Trauma>
+  - type: PhysicalComposition
+    materialComposition:
+      Cloth: 50
+  # </Trauma>
   - type: Tag
     tags:
     - Scarf
     - ClothMade
     - Recyclable
     - WhitelistChameleon
-  - type: PhysicalComposition #Goobstation - Recycle update
-    materialComposition:
-      Cloth: 50
+  - type: TemperatureProtection
+    heatingCoefficient: 1.025
+    coolingCoefficient: 0.5

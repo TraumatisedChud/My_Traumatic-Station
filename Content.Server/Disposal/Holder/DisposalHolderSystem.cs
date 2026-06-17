@@ -149,13 +149,9 @@ public sealed partial class DisposalHolderSystem : SharedDisposalHolderSystem
                 // Throw the entity
                 if (exitAngle != null && heldXform.ParentUid.IsValid())
                 {
-                    // <Trauma>
-                    if (_physicsQuery.TryGetComponent(entity, out var physBody))
-                        _physicsSystem.SetCanCollide(entity, true, body: physBody);
-                    var speed = unit?.Comp.Speed ?? ent.Comp.TraversalSpeed;
-                    // </Trauma>
-                    _throwing.TryThrow(held, exitAngle.Value.ToWorldVec() * ent.Comp.ExitDistanceMultiplier, speed * ent.Comp.ExitSpeedMultiplier,
-                        predicted: false); // Trauma - predicted and use speed
+                    _physics.SetCanCollide(held, true); // Trauma
+                    _throwing.TryThrow(held, exitAngle.Value.ToWorldVec() * ent.Comp.ExitDistanceMultiplier, ent.Comp.TraversalSpeed * ent.Comp.ExitSpeedMultiplier,
+                        predicted: false); // Trauma
                 }
             }
         }

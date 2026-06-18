@@ -241,7 +241,8 @@ namespace Content.Server.Cargo.Systems
                 return;
             }
 
-            // GoobStation - cooldown on Cargo Orders (specifically gamba)
+            // <Trauma>
+            // cooldown on Cargo Orders (specifically gamba)
             if (product.Cooldown > TimeSpan.Zero)
             {
                 if (orderDatabase.ProductCooldownTime.TryGetValue(product.ID, out var cooldownTime) && cooldownTime > _timing.CurTime)
@@ -260,7 +261,7 @@ namespace Content.Server.Cargo.Systems
                 }
             }
 
-            // <Trauma> can't buy guns on green, also handle if the destination was deleted
+            // can't buy guns on green, also handle if the destination was deleted
             if (!CheckAlertPopup((uid, component), player, product, station.Value))
                 return;
 
@@ -271,6 +272,13 @@ namespace Content.Server.Cargo.Systems
                 return;
             }
             // </Trauma>
+
+            var emagged = _emag.CheckFlag(uid, EmagType.Interaction);
+
+            if (!emagged)
+            {
+                order.SetApproverData(_identity.GetIdentityShortInfo(player, uid));
+            }
 
             var ev = new FulfillCargoOrderEvent((station.Value, stationData), order, (uid, component));
             RaiseLocalEvent(dest, ref ev); // Trauma - raise it on the destination
@@ -284,6 +292,7 @@ namespace Content.Server.Cargo.Systems
                 {
                     ConsolePopup(args.Actor, Loc.GetString("cargo-console-unfulfilled"));
                     PlayDenySound(uid, component);
+                    order.Approver = null;
                     return;
                 }
             }
@@ -297,10 +306,8 @@ namespace Content.Server.Cargo.Systems
             order.Approved = true;
             _audio.PlayPvs(ApproveSound, uid);
 
-            if (!_emag.CheckFlag(uid, EmagType.Interaction))
+            if (!emagged)
             {
-                order.SetApproverData(_identity.GetIdentityShortInfo(player, uid));
-
                 var message = Loc.GetString("cargo-console-unlock-approved-order-broadcast",
                     ("productName", product.Name), // Trauma - remove Loc.GetString its already localized
                     ("orderAmount", order.OrderQuantity),

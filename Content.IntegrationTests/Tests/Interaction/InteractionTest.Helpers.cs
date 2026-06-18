@@ -477,7 +477,7 @@ public abstract partial class InteractionTest
         var actualTarget = SEntMan.GetCoordinates(target ?? TargetCoords);
         var result = false;
         // Trauma - use PredictedHands
-        await Server.WaitPost(() => result = PredictedHands.ThrowHeldItem(SEntMan.GetEntity(Player), actualTarget, minDistance));
+        await Server.WaitPost(() => result = SPredictedHands.ThrowHeldItem(SEntMan.GetEntity(Player), actualTarget, minDistance));
         return result;
     }
 
@@ -1189,11 +1189,6 @@ public abstract partial class InteractionTest
     protected async Task RunTicks(int ticks)
     {
         await Pair.RunTicksSync(ticks);
-    }
-
-    protected async Task RunSeconds(float seconds)
-    {
-        await Pair.RunSeconds(seconds);
     }
 
     #endregion

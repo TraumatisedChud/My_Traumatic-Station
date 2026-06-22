@@ -20,7 +20,7 @@ jobs:
     steps:
     - &checkout
       name: Checkout Master
-      uses: actions/checkout@v4.2.2
+      uses: actions/checkout@v7
 
     - &submodule
       name: Setup Submodule

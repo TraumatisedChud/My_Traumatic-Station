@@ -1,6 +1,5 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-using Content.Server.Guardian;
 using Content.Server.Mind;
 using Content.Server.Polymorph.Components;
 using Content.Server.Polymorph.Systems;
@@ -59,12 +58,6 @@ public sealed partial class WizardMirrorSystem : SharedWizardMirrorSystem
         if (humanoid.Species != profile.Species && component.AllowedSpecies.Contains(profile.Species) &&
             _proto.TryIndex(profile.Species, out var speciesProto))
         {
-            if (HasComp<GuardianHostComponent>(target))
-            {
-                _popup.PopupEntity(Loc.GetString("wizard-mirror-guardian-change-species-fail"), target, target);
-                return;
-            }
-
             var config = new PolymorphConfiguration
             {
                 Entity = speciesProto.Prototype,

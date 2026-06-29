@@ -1,0 +1,10 @@
+- type: entity
+  parent: [ArabianLamp, BaseMagicalContraband]
+  name: magical lamp
+  id: MagicalLamp
+  description: The wizard federation had to cut costs after the jinn merchandise scandal somehow.
+  components:
+  - type: GuardianCreator
+    guardianProto: MobIfritGuardian
+  - type: AccessReader
+    access: [["Wizard"]]

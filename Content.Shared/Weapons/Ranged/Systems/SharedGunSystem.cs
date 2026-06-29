@@ -62,7 +62,6 @@ public abstract partial class SharedGunSystem : EntitySystem
     [Dependency] protected ExamineSystemShared Examine = default!;
     [Dependency] protected IGameTiming Timing = default!;
     [Dependency] protected IMapManager MapManager = default!;
-    [Dependency] protected IPrototypeManager ProtoManager = default!;
     //[Dependency] protected IRobustRandom Random = default!; // Trauma - predicted Random(uid) used instead
     [Dependency] protected ISharedAdminLogManager Logs = default!;
     [Dependency] protected SharedActionsSystem Actions = default!;

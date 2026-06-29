@@ -173,7 +173,7 @@ public sealed partial class DamageableSystem
             var modified = increaseOnly ? new DamageSpecifier(damage) : damage;
             if (
                 ent.Comp.DamageModifierSetId != null &&
-                _prototypeManager.Resolve(ent.Comp.DamageModifierSetId, out var modifierSet)
+                ProtoMan.Resolve(ent.Comp.DamageModifierSetId, out var modifierSet)
             )
                 modified = DamageSpecifier.ApplyModifierSet(modified,
                     DamageSpecifier.PenetrateArmor(modifierSet, modified.ArmorPenetration)); // Goob edit

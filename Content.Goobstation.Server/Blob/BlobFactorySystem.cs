@@ -16,7 +16,6 @@ namespace Content.Goobstation.Server.Blob;
 
 public sealed partial class BlobFactorySystem : EntitySystem
 {
-    [Dependency] private IPrototypeManager _proto = default!;
     [Dependency] private MobStateSystem _mobState = default!;
 
     public override void Initialize()
@@ -92,27 +91,27 @@ public sealed partial class BlobFactorySystem : EntitySystem
                 blobGas.AddSolution(new Solution(Phlogiston, FixedPoint2.New(30))
                 {
                     Temperature = 1000
-                }, _proto);
+                }, ProtoMan);
                 break;
             case BlobChemType.ReactiveSpines:
-                blobGas.AddSolution(new Solution(Mold, FixedPoint2.New(30)), _proto);
+                blobGas.AddSolution(new Solution(Mold, FixedPoint2.New(30)), ProtoMan);
                 break;
             case BlobChemType.RegenerativeMateria:
-                blobGas.AddSolution(new Solution(Bicaridine, FixedPoint2.New(30)), _proto);
+                blobGas.AddSolution(new Solution(Bicaridine, FixedPoint2.New(30)), ProtoMan);
                 break;
             case BlobChemType.ExplosiveLattice:
                 blobGas.AddSolution(new Solution(Lexorin, FixedPoint2.New(30))
                 {
                     Temperature = 1000
-                }, _proto);
+                }, ProtoMan);
                 break;
             case BlobChemType.ElectromagneticWeb:
-                blobGas.AddSolution(new Solution(Aluminium, FixedPoint2.New(10)){ CanReact = false }, _proto);
-                blobGas.AddSolution(new Solution(Iron, FixedPoint2.New(10)){ CanReact = false }, _proto);
-                blobGas.AddSolution(new Solution(Uranium, FixedPoint2.New(10)){ CanReact = false }, _proto);
+                blobGas.AddSolution(new Solution(Aluminium, FixedPoint2.New(10)){ CanReact = false }, ProtoMan);
+                blobGas.AddSolution(new Solution(Iron, FixedPoint2.New(10)){ CanReact = false }, ProtoMan);
+                blobGas.AddSolution(new Solution(Uranium, FixedPoint2.New(10)){ CanReact = false }, ProtoMan);
                 break;
             default:
-                blobGas.AddSolution(new Solution(TearGas, FixedPoint2.New(30)), _proto);
+                blobGas.AddSolution(new Solution(TearGas, FixedPoint2.New(30)), ProtoMan);
                 break;
         }
     }

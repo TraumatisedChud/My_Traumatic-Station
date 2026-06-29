@@ -25,7 +25,6 @@ public sealed partial class XenobiologySystem : EntitySystem
     [Dependency] private SharedAppearanceSystem _appearance = default!;
     [Dependency] private MobStateSystem _mobState = default!;
     [Dependency] private IRobustRandom _random = default!;
-    [Dependency] private IPrototypeManager _prototypeManager = default!;
     [Dependency] private MetaDataSystem _metaData = default!;
     [Dependency] private SharedContainerSystem _containerSystem = default!;
     [Dependency] private SharedPopupSystem _popup = default!;
@@ -69,7 +68,7 @@ public sealed partial class XenobiologySystem : EntitySystem
     /// <returns>Grey if no breed can be found.</returns>
     public EntProtoId GetProducedExtract(Entity<SlimeComponent> slime)
     {
-        return _prototypeManager.TryIndex(slime.Comp.Breed, out var breedPrototype)
+        return ProtoMan.TryIndex(slime.Comp.Breed, out var breedPrototype)
             ? breedPrototype.ProducedExtract
             : slime.Comp.DefaultExtract;
     }

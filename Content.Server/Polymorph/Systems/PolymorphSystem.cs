@@ -44,7 +44,6 @@ public sealed partial class PolymorphSystem : SharedPolymorphSystem // Trauma - 
     [Dependency] private BodySystem _body = default!;
     // </Trauma>
     [Dependency] private SharedMapSystem _map = default!;
-    [Dependency] private IPrototypeManager _proto = default!;
     [Dependency] private IGameTiming _gameTiming = default!;
     [Dependency] private ActionsSystem _actions = default!;
     [Dependency] private AudioSystem _audio = default!;
@@ -132,7 +131,7 @@ public sealed partial class PolymorphSystem : SharedPolymorphSystem // Trauma - 
 
     private void OnPolymorphActionEvent(Entity<PolymorphableComponent> ent, ref PolymorphActionEvent args)
     {
-        if (!_proto.Resolve(args.ProtoId, out var prototype) || args.Handled)
+        if (!ProtoMan.Resolve(args.ProtoId, out var prototype) || args.Handled)
             return;
 
         PolymorphEntity(ent, prototype.Configuration);
@@ -187,7 +186,7 @@ public sealed partial class PolymorphSystem : SharedPolymorphSystem // Trauma - 
     /// <param name="protoId">The id of the polymorph prototype</param>
     public override EntityUid? PolymorphEntity(EntityUid uid, ProtoId<PolymorphPrototype> protoId) // Trauma - override virtual method
     {
-        var config = _proto.Index(protoId).Configuration;
+        var config = ProtoMan.Index(protoId).Configuration;
         return PolymorphEntity(uid, config);
     }
 
@@ -558,15 +557,15 @@ public sealed partial class PolymorphSystem : SharedPolymorphSystem // Trauma - 
         if (target.Comp.PolymorphActions.ContainsKey(id))
             return;
 
-        if (!_proto.Resolve(id, out var polyProto))
+        if (!ProtoMan.Resolve(id, out var polyProto))
             return;
 
-        // Goob edit start
-        if (polyProto.Configuration.Entity == null)
+        // <Trauma> - entity can be null
+        if (polyProto.Configuration.Entity is not { } protoId)
             return;
 
-        var entProto = _proto.Index(polyProto.Configuration.Entity.Value);
-        // Goob edit end
+        var entProto = ProtoMan.Index(protoId);
+        // </Trauma>
 
         EntityUid? actionId = default!;
         if (!_actions.AddAction(target, ref actionId, RevertPolymorphId, target))

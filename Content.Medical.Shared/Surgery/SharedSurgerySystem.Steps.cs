@@ -192,7 +192,7 @@ public abstract partial class SharedSurgerySystem
 
     private string GetDamageGroupByType(string id)
     {
-        return (from @group in _prototypes.EnumeratePrototypes<DamageGroupPrototype>() where @group.DamageTypes.Contains(id) select @group.ID).FirstOrDefault()!;
+        return (from @group in ProtoMan.EnumeratePrototypes<DamageGroupPrototype>() where @group.DamageTypes.Contains(id) select @group.ID).FirstOrDefault()!;
     }
 
     private void OnTendWoundsStep(Entity<SurgeryTendWoundsEffectComponent> ent, ref SurgeryStepEvent args)
@@ -211,7 +211,7 @@ public abstract partial class SharedSurgerySystem
 
         var adjustedDamage = new DamageSpecifier(ent.Comp.Damage);
 
-        var group = _prototypes.Index<DamageGroupPrototype>(ent.Comp.MainGroup);
+        var group = ProtoMan.Index<DamageGroupPrototype>(ent.Comp.MainGroup);
         foreach (var type in group.DamageTypes)
             adjustedDamage.DamageDict[type] -= bonus;
 
@@ -287,7 +287,7 @@ public abstract partial class SharedSurgerySystem
             return;
 
         // We reward players for properly affixing the parts by healing a little bit of damage, and enabling the part temporarily.
-        _wounds.TryHealWoundsOnWoundable(targetPart, 12f, out _, damageGroup: _prototypes.Index(Brute));
+        _wounds.TryHealWoundsOnWoundable(targetPart, 12f, out _, damageGroup: ProtoMan.Index(Brute));
         RemComp<OrganReattachedComponent>(targetPart);
     }
 
@@ -521,7 +521,7 @@ public abstract partial class SharedSurgerySystem
             surgeryTargetComponent.SepsisImmune)
             return;
 
-        var sepsis = new DamageSpecifier(_prototypes.Index(Poison), 5);
+        var sepsis = new DamageSpecifier(ProtoMan.Index(Poison), 5);
         var ev = new SurgeryStepDamageEvent(args.User, args.Body, args.Part, args.Surgery, sepsis, 0.5f);
         RaiseLocalEvent(args.Body, ref ev);
     }

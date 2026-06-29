@@ -16,7 +16,6 @@ namespace Content.Trauma.Server.Wizard.Systems;
 
 public sealed partial class WizardMirrorSystem : SharedWizardMirrorSystem
 {
-    [Dependency] private IPrototypeManager _proto = default!;
     [Dependency] private MetaDataSystem _meta = default!;
     [Dependency] private MindSystem _mind = default!;
     [Dependency] private PolymorphSystem _polymorph = default!;
@@ -56,7 +55,7 @@ public sealed partial class WizardMirrorSystem : SharedWizardMirrorSystem
     {
         var age = humanoid.Age;
         if (humanoid.Species != profile.Species && component.AllowedSpecies.Contains(profile.Species) &&
-            _proto.TryIndex(profile.Species, out var speciesProto))
+            ProtoMan.TryIndex(profile.Species, out var speciesProto))
         {
             var config = new PolymorphConfiguration
             {

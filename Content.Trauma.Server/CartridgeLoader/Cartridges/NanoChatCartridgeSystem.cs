@@ -27,7 +27,6 @@ public sealed partial class NanoChatCartridgeSystem : EntitySystem
     [Dependency] private CartridgeLoaderSystem _cartridge = default!;
     [Dependency] private IAdminLogManager _adminLogger = default!;
     [Dependency] private IGameTiming _timing = default!;
-    [Dependency] private IPrototypeManager _prototype = default!;
     [Dependency] private SharedNanoChatSystem _nanoChat = default!;
     [Dependency] private StationSystem _station = default!;
     [Dependency] private SharedUserInterfaceSystem _ui = default!;
@@ -345,7 +344,7 @@ public sealed partial class NanoChatCartridgeSystem : EntitySystem
         uint recipientNumber)
     {
         // First verify we can send from this device
-        var channel = _prototype.Index(sender.Comp.RadioChannel);
+        var channel = ProtoMan.Index(sender.Comp.RadioChannel);
         var sendAttemptEvent = new RadioSendAttemptEvent(channel, sender);
         RaiseLocalEvent(ref sendAttemptEvent);
         if (sendAttemptEvent.Cancelled)

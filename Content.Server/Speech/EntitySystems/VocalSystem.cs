@@ -10,7 +10,6 @@ using Content.Shared.Humanoid;
 using Content.Shared.Speech;
 using Content.Shared.Speech.Components;
 using Robust.Shared.Audio.Systems;
-using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 
 namespace Content.Server.Speech.EntitySystems;
@@ -18,7 +17,6 @@ namespace Content.Server.Speech.EntitySystems;
 public sealed partial class VocalSystem : EntitySystem
 {
     [Dependency] private IRobustRandom _random = default!;
-    [Dependency] private IPrototypeManager _proto = default!;
     [Dependency] private SharedAudioSystem _audio = default!;
     [Dependency] private ChatSystem _chat = default!;
     [Dependency] private ActionsSystem _actions = default!;
@@ -86,7 +84,7 @@ public sealed partial class VocalSystem : EntitySystem
             return;
         }
 
-        // Goobstation start
+        // <Trauma>
         var getSoundEv = new GetEmoteSoundsEvent();
         RaiseLocalEvent(uid, ref getSoundEv);
         if (getSoundEv.Handled)
@@ -94,19 +92,19 @@ public sealed partial class VocalSystem : EntitySystem
             if (getSoundEv.EmoteSoundProtoId is not { } proto)
                 return;
 
-            if (_proto.TryIndex(proto, out EmoteSoundsPrototype? evSounds))
+            if (ProtoMan.Resolve(proto, out EmoteSoundsPrototype? evSounds))
             {
                 args.Handled = _chat.TryPlayEmoteSound(uid, evSounds, args.Emote);
                 return;
             }
         }
-        // Goobstation end
+        // </Trauma>
 
         if (component.EmoteSounds is not { } sounds)
             return;
 
         // just play regular sound based on emote proto
-        args.Handled = _chat.TryPlayEmoteSound(uid, _proto.Index(sounds), args.Emote);
+        args.Handled = _chat.TryPlayEmoteSound(uid, ProtoMan.Index(sounds), args.Emote);
     }
 
     private void OnEmoteAction(EntityUid uid, VocalComponent component, EmoteActionEvent args)
@@ -124,7 +122,7 @@ public sealed partial class VocalSystem : EntitySystem
         var getSoundEv = new GetEmoteSoundsEvent();
         RaiseLocalEvent(uid, ref getSoundEv);
         if (getSoundEv.EmoteSoundProtoId != null &&
-            _proto.TryIndex(getSoundEv.EmoteSoundProtoId, out EmoteSoundsPrototype? evSounds))
+            ProtoMan.Resolve(getSoundEv.EmoteSoundProtoId, out EmoteSoundsPrototype? evSounds))
             return _chat.TryPlayEmoteSound(uid, evSounds, component.ScreamId);
         // Goobstation end
 
@@ -137,7 +135,7 @@ public sealed partial class VocalSystem : EntitySystem
         if (component.EmoteSounds is not { } sounds)
             return false;
 
-        return _chat.TryPlayEmoteSound(uid, _proto.Index(sounds), component.ScreamId);
+        return _chat.TryPlayEmoteSound(uid, ProtoMan.Index(sounds), component.ScreamId);
     }
 
     private void LoadSounds(EntityUid uid, VocalComponent component, Sex? sex = null)
@@ -150,7 +148,7 @@ public sealed partial class VocalSystem : EntitySystem
         if (!component.Sounds.TryGetValue(sex.Value, out var protoId))
             return;
 
-        if (!_proto.HasIndex(protoId))
+        if (!ProtoMan.HasIndex(protoId))
             return;
 
         component.EmoteSounds = protoId;

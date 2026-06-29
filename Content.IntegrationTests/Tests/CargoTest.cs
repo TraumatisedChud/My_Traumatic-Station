@@ -248,7 +248,7 @@ public sealed class CargoTest : GameTest
                 foreach (var (proto, comp) in Pair.GetPrototypesWithComponent<MobPriceComponent>())
                 {
                     Assert.That(
-                        proto.TryGetComponent<MobStateComponent>(out _, _sCompFact),
+                        proto.TryComp<MobStateComponent>(out _, _sCompFact),
                         $"Found {nameof(MobPriceComponent)} on {proto.ID}, but no {nameof(MobStateComponent)}!"
                     );
                 }

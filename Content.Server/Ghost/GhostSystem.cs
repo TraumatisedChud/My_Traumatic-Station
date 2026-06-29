@@ -68,7 +68,6 @@ namespace Content.Server.Ghost
         [Dependency] private VisibilitySystem _visibilitySystem = default!;
         [Dependency] private MetaDataSystem _metaData = default!;
         [Dependency] private MobThresholdSystem _mobThresholdSystem = default!;
-        [Dependency] private IPrototypeManager _prototypeManager = default!;
         [Dependency] private IConfigurationManager _configurationManager = default!;
         [Dependency] private IChatManager _chatManager = default!;
         [Dependency] private SharedMindSystem _mind = default!;
@@ -612,7 +611,7 @@ namespace Content.Server.Ghost
                         // <Trauma>
                         var ev = new SuicideDamageEvent(AsphyxiationDamageType);
                         RaiseLocalEvent(playerEntity.Value, ref ev);
-                        DamageSpecifier damage = new(_prototypeManager.Index<DamageTypePrototype>(ev.DamageType), dealtDamage);
+                        DamageSpecifier damage = new(ProtoMan.Index(ev.DamageType), dealtDamage);
 
                         TargetBodyPart? targetPart = HasComp<BodyComponent>(playerEntity) ? TargetBodyPart.Chest : null;
                         _damageable.ChangeDamage(playerEntity.Value, damage, true, targetPart: targetPart);

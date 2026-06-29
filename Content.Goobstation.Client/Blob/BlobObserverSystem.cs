@@ -7,14 +7,12 @@ using Content.Shared.GameTicking;
 using Content.Shared.StatusIcon;
 using Content.Shared.StatusIcon.Components;
 using Robust.Shared.Player;
-//using Content.Shared.Flesh;
 
 namespace Content.Goobstation.Client.Blob;
 
 public sealed partial class BlobObserverSystem : SharedBlobObserverSystem
 {
     [Dependency] private ILightManager _lightManager = default!;
-    [Dependency] private IPrototypeManager _prototype = default!;
 
     public override void Initialize()
     {
@@ -35,7 +33,7 @@ public sealed partial class BlobObserverSystem : SharedBlobObserverSystem
 
     private void OnShowBlobIcon<T>(Entity<T> ent, ref GetStatusIconsEvent args) where T : Component
     {
-        args.StatusIcons.Add(_prototype.Index<FactionIconPrototype>(BlobFaction));
+        args.StatusIcons.Add(ProtoMan.Index<FactionIconPrototype>(BlobFaction));
     }
 
     private void OnPlayerAttached(EntityUid uid, BlobObserverComponent component, LocalPlayerAttachedEvent args)

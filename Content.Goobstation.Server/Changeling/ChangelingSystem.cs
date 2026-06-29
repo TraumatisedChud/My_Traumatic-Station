@@ -90,7 +90,6 @@ public sealed partial class ChangelingSystem : SharedChangelingSystem
     [Dependency] private DoAfterSystem _doAfter = default!;
     [Dependency] private MobStateSystem _mobState = default!;
     [Dependency] private MobThresholdSystem _mobThreshold = default!;
-    [Dependency] private IPrototypeManager _proto = default!;
     [Dependency] private DamageableSystem _damage = default!;
     [Dependency] private SharedBloodstreamSystem _blood = default!;
     [Dependency] private MetaDataSystem _metaData = default!;
@@ -192,7 +191,7 @@ public sealed partial class ChangelingSystem : SharedChangelingSystem
         if (ent.Comp.ReagentDivisor <= 0)
             return;
 
-        if (!_proto.TryIndex(ent.Comp.StingConfiguration, out var configuration))
+        if (!ProtoMan.TryIndex(ent.Comp.StingConfiguration, out var configuration))
             return;
 
         TryInjectReagents(args.Target,
@@ -464,7 +463,7 @@ public sealed partial class ChangelingSystem : SharedChangelingSystem
         if (!TryComp(action.Action, out ChangelingReagentStingComponent? reagentSting))
             return false;
 
-        if (!_proto.TryIndex(reagentSting.Configuration, out var configuration))
+        if (!ProtoMan.TryIndex(reagentSting.Configuration, out var configuration))
             return false;
 
         if (!TryInjectReagents(target, configuration.Reagents))
@@ -549,7 +548,7 @@ public sealed partial class ChangelingSystem : SharedChangelingSystem
 
         if (data != null)
         {
-            if (!_proto.TryIndex(data.Profile.Species, out var species))
+            if (!ProtoMan.TryIndex(data.Profile.Species, out var species))
                 return null;
             pid = species.Prototype;
         }
@@ -706,7 +705,7 @@ public sealed partial class ChangelingSystem : SharedChangelingSystem
         if (ent.Comp.EvolutionsAssigned) // this is solely because polymorph will cause mega errors otherwise
             return;
 
-        if (!_proto.TryIndex(ent.Comp.EvolutionsProto, out var evoProto))
+        if (!ProtoMan.TryIndex(ent.Comp.EvolutionsProto, out var evoProto))
             return;
 
         foreach (var startingComp in evoProto.Components)

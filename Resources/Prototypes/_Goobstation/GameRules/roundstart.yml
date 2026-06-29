@@ -104,6 +104,7 @@
   - type: GameRule
     minPlayers: 40
   - type: AntagSelection
+    agentName: blob-round-end-agent-name
     antags:
     - !type:FixedAntagCount
       proto: Blob

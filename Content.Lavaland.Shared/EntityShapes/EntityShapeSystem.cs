@@ -13,7 +13,6 @@ public sealed partial class EntityShapeSystem : EntitySystem
 {
     [Dependency] private AngerSystem _anger = default!;
     [Dependency] private IGameTiming _timing = default!;
-    [Dependency] private IPrototypeManager _protoMan = default!;
     [Dependency] private INetManager _net = default!;
     [Dependency] private IMapManager _mapMan = default!;
 
@@ -80,7 +79,7 @@ public sealed partial class EntityShapeSystem : EntitySystem
         if (_net.IsClient)
             return;
 
-        var result = shape.GetShape(GetRandom(), _protoMan);
+        var result = shape.GetShape(GetRandom(), ProtoMan);
         for (int i = 0; i < result.Count; i++)
         {
             result[i] += coords.Position;

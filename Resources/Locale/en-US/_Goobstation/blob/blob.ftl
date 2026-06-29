@@ -143,21 +143,7 @@ blob-role-greeting =
 blob-zombie-greeting = You were infected and raised by a blob spore. Now you must help the blob take over the station. Use +e in chat to talk in the Blobmind.
 
 # End round
-blob-round-end-result =
-    { $blobCount ->
-        [one] There was one blob infection.
-        *[other] There were {$blobCount} blobs.
-    }
-
-blob-user-was-a-blob = [color=gray]{$user}[/color] was a blob.
-blob-user-was-a-blob-named = [color=White]{$name}[/color] ([color=gray]{$user}[/color]) was a blob.
-blob-was-a-blob-named = [color=White]{$name}[/color] was a blob.
-
-preset-blob-objective-issuer-blob = [color=#33cc00]Blob[/color]
-
-blob-user-was-a-blob-with-objectives = [color=gray]{$user}[/color] was a blob who had the following objectives:
-blob-user-was-a-blob-with-objectives-named = [color=White]{$name}[/color] ([color=gray]{$user}[/color]) was a blob who had the following objectives:
-blob-was-a-blob-with-objectives-named = [color=White]{$name}[/color] was a blob who had the following objectives:
+blob-round-end-agent-name = blob infection
 
 # Objectivies
 objective-condition-blob-capture-title = Take over the station

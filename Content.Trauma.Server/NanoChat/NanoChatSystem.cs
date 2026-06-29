@@ -1,6 +1,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using System.Linq;
+using Content.Server.Access.Components;
 using Content.Server.Access.Systems;
 using Content.Server.Administration.Logs;
 using Content.Server.NameIdentifier;
@@ -149,5 +150,11 @@ public sealed partial class NanoChatSystem : SharedNanoChatSystem
         _name.GenerateUniqueName(ent, _nameIdentifierGroup, out var number);
         ent.Comp.Number = (uint) number;
         Dirty(ent);
+    }
+
+    [SubscribeLocalEvent]
+    private void OnAgentIDSetNumber(Entity<AgentIDCardComponent> ent, ref AgentIDSetNumberMessage args)
+    {
+        SetNumber(ent.Owner, args.Number);
     }
 }

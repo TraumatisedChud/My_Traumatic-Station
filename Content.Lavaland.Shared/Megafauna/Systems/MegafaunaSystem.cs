@@ -12,7 +12,6 @@ public sealed partial class MegafaunaSystem : EntitySystem
 {
     [Dependency] private IGameTiming _timing = default!;
     [Dependency] private INetManager _net = default!;
-    [Dependency] private IPrototypeManager _protoMan = default!;
     [Dependency] private MobStateSystem _mobState = default!;
     [Dependency] private SharedTransformSystem _xform = default!;
 
@@ -50,7 +49,7 @@ public sealed partial class MegafaunaSystem : EntitySystem
                 if (time > _timing.CurTime)
                     continue;
 
-                var args = new MegafaunaCalculationBaseArgs(uid, EntityManager, _protoMan, Log, GetRandom());
+                var args = new MegafaunaCalculationBaseArgs(uid, EntityManager, ProtoMan, Log, GetRandom());
                 var actionTime = action.Invoke(args);
                 ai.Schedule.Remove(time);
 

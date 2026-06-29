@@ -33,7 +33,6 @@ public sealed partial class ShadowlingAscensionEggSystem : EntitySystem
 {
     [Dependency] private EntityStorageSystem _entityStorage = default!;
     [Dependency] private IGameTiming _timing = default!;
-    [Dependency] private IPrototypeManager _protoMan = default!;
     [Dependency] private SharedPopupSystem _popup = default!;
     [Dependency] private SharedActionsSystem _actions = default!;
     [Dependency] private PolymorphSystem _polymorph = default!;
@@ -234,7 +233,7 @@ public sealed partial class ShadowlingAscensionEggSystem : EntitySystem
             _actions.RemoveAction(ascendant.ActionHatchEntity);
         }
 
-        var nightmareComps = _protoMan.Index(NightmareAbilities);
+        var nightmareComps = ProtoMan.Index(NightmareAbilities);
         foreach (var thrall in thralls)
         {
             if (HasComp<LesserShadowlingComponent>(thrall))

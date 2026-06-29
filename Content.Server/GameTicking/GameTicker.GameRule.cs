@@ -403,10 +403,10 @@ public sealed partial class GameTicker
     public IEnumerable<EntityPrototype> GetAllGameRulePrototypes()
     {
         // <Trauma> - remove abstract check, replace slop component check.
-        var ruleName = Factory.GetComponentName<GameRuleComponent>();
-        foreach (var proto in _prototypeManager.EnumeratePrototypes<EntityPrototype>())
+        var ruleName = Factory.CompName<GameRuleComponent>();
+        foreach (var proto in ProtoMan.EnumeratePrototypes<EntityPrototype>())
         {
-            if (proto.Components.ContainsKey(ruleName))
+            if (proto.HasComp(ruleName))
                 yield return proto;
         }
         // </Trauma>
@@ -469,7 +469,7 @@ public sealed partial class GameTicker
 
         foreach (var rule in args)
         {
-            if (!_prototypeManager.HasIndex(rule))
+            if (!ProtoMan.HasIndex(rule))
             {
                 shell.WriteError($"Invalid game rule {rule} was skipped.");
 

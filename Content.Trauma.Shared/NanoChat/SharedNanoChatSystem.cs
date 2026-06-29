@@ -14,12 +14,7 @@ public abstract partial class SharedNanoChatSystem : CommonNanoChatSystem
 {
     [Dependency] private IGameTiming _timing = default!;
 
-    public override void Initialize()
-    {
-        base.Initialize();
-        SubscribeLocalEvent<NanoChatCardComponent, ExaminedEvent>(OnExamined);
-    }
-
+    [SubscribeLocalEvent]
     private void OnExamined(Entity<NanoChatCardComponent> ent, ref ExaminedEvent args)
     {
         if (!args.IsInDetailsRange)
@@ -37,16 +32,11 @@ public abstract partial class SharedNanoChatSystem : CommonNanoChatSystem
     #region Public API Methods
 
     public override uint? GetNumber(Entity<NanoChatCardComponent?> card)
-    {
-        if (!Resolve(card, ref card.Comp))
-            return null;
-
-        return card.Comp.Number;
-    }
+        => Resolve(card, ref card.Comp) ? card.Comp.Number : null;
 
     public override void SetNumber(Entity<NanoChatCardComponent?> card, uint number)
     {
-        if (!Resolve(card, ref card.Comp))
+        if (!Resolve(card, ref card.Comp) || card.Comp.Number == number || number > 9999)
             return;
 
         card.Comp.Number = number;

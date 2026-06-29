@@ -38,13 +38,13 @@ public sealed class DeviceLinkingTest : GameTest
         var mapSys = server.System<SharedMapSystem>();
         var deviceLinkSys = server.System<DeviceLinkSystem>();
 
-        var sinkName = compFact.GetComponentName<DeviceLinkSinkComponent>(); // Trauma
+        var sinkName = compFact.CompName<DeviceLinkSinkComponent>(); // Trauma
         await server.WaitAssertion(() =>
         {
             using (Assert.EnterMultipleScope())
             {
                 var proto = protoMan.Index(protoKey);
-                Assert.That(proto.TryGetComponent<DeviceLinkSinkComponent>(sinkName, out var protoSinkComp)); // Trauma - use cached name
+                Assert.That(proto.TryComp<DeviceLinkSinkComponent>(sinkName, out var protoSinkComp)); // Trauma - use cached name
 
                 foreach (var port in protoSinkComp!.Ports)
                 {

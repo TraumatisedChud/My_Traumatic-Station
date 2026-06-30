@@ -15,6 +15,7 @@ using Content.Shared.Climbing.Events;
 using Content.Shared.Construction.Components;
 using Content.Shared.Database;
 using Content.Shared.DoAfter;
+using Content.Shared.FixedPoint;
 using Content.Shared.Humanoid;
 using Content.Shared.Interaction;
 using Content.Shared.Interaction.Events;
@@ -261,7 +262,8 @@ namespace Content.Server.Medical.BiomassReclaimer
                 _solution.ResolveSolution(toProcess, stream.BloodSolutionName, ref stream.BloodSolution, out var solution))
             {
                 component.BloodReagents = solution.Clone();
-                //component.BloodReagents.ScaleSolution(50 / component.BloodReagents.Volume); // Trauma - this makes no sense + divide by 0 for fully drained mobs
+                var scale = component.BloodReagents.Volume <= FixedPoint2.Zero ? 0 : 50 / component.BloodReagents.Volume;
+                component.BloodReagents.ScaleSolution(scale);
             }
             if (TryComp<ToolRefinableComponent>(toProcess, out var refinable))
             {

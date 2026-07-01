@@ -162,8 +162,6 @@ public sealed partial class HumanoidProfileSystem
 
         ent.Comp.Sex = sex;
         Dirty(ent);
-        var ev = new SexChangedEvent(old, sex);
-        RaiseLocalEvent(ent, ref ev);
     }
 
     public void SetGender(Entity<HumanoidProfileComponent> ent, Gender gender)

@@ -616,10 +616,7 @@
   - type: ZombieAccentOverride
     accent: zombieMoth
   - type: Vocal
-    sounds:
-      Male: UnisexMoth
-      Female: UnisexMoth
-      Unsexed: UnisexMoth
+    emoteSounds: UnisexMoth
     wilhelmProbability: 0.001
   - type: BodyEmotes
     soundsId: MothBodyEmotes
@@ -1137,10 +1134,7 @@
     speechSounds: Goat
     speechVerb: Goat
   - type: Vocal
-    sounds:
-      Female: Goat
-      Male: Goat
-      Unsexed: Goat
+    emoteSounds: Goat
   - type: BleatingAccent
   - type: InteractionPopup
     successChance: 0.2
@@ -1274,10 +1268,7 @@
     speechSounds: Sheep
     speechVerb: Sheep
   - type: Vocal
-    sounds:
-      Female: Sheep
-      Male: Sheep
-      Unsexed: Sheep
+    emoteSounds: Sheep
   - type: BleatingAccent
   - type: InteractionPopup
     successChance: 0.8 #SHEEP so FRIEND!!! HUG! SQUISHY! SOFT!
@@ -1572,8 +1563,7 @@
     rules: ghost-role-information-nonantagonist-rules
   - type: GhostTakeoverAvailable
   - type: Vocal
-    sounds:
-      Unsexed: Kangaroo
+    emoteSounds: Kangaroo
   - type: Puller
     needsHands: false
   - type: StaminaDamageOnHit
@@ -1884,10 +1874,7 @@
     speechVerb: Reptilian
     allowedEmotes: ['Thump']
   - type: Vocal
-    sounds:
-      Male: MaleReptilian
-      Female: FemaleReptilian
-      Unsexed: MaleReptilian
+    emoteSounds: MaleReptilian
   - type: BodyEmotes
     soundsId: ReptilianBodyEmotes
   - type: TypingIndicator
@@ -2195,10 +2182,7 @@
       types:
         Blunt: 0.1
   - type: Vocal
-    sounds:
-      Male: Mouse
-      Female: Mouse
-      Unsexed: Mouse
+    emoteSounds: Mouse
     wilhelmProbability: 0.001
   # TODO: Remove CombatMode when Prototype Composition is added
   - type: CombatMode
@@ -2551,6 +2535,13 @@
   abstract: true
   description: Infiltrates your domain, spies on you, and somehow still a cool pet.
   components:
+  # <Trauma>
+  - type: LanguageSpeaker
+    speaks:
+    - TauCetiBasic
+    understands:
+    - TauCetiBasic
+  # </Trauma>
   - type: MovementSpeedModifier
     baseWalkSpeed : 2.5
     baseSprintSpeed : 6
@@ -2587,14 +2578,8 @@
     speechSounds: Parrot
     speechVerb: Parrot
   - type: Vocal
-    sounds:
-      Unsexed: Parrot
+    emoteSounds: Parrot
   - type: ParrotAccent
-  - type: LanguageSpeaker # Einstein Engines - Language
-    speaks:
-    - TauCetiBasic
-    understands:
-    - TauCetiBasic
   - type: ActiveListener
   - type: Vocalizer
   - type: RadioVocalizer
@@ -2901,10 +2886,7 @@
     speechSounds: Arachnid
     allowedEmotes: ['Click', 'Chitter']
   - type: Vocal
-    sounds:
-      Male: UnisexArachnid
-      Female: UnisexArachnid
-      Unsexed: UnisexArachnid
+    emoteSounds: UnisexArachnid
   - type: TypingIndicator
     proto: spider
   - type: Tag
@@ -4159,10 +4141,7 @@
     speechSounds: Alto
     allowedEmotes: ['Chirp']
   - type: Vocal
-    sounds:
-      Male: UnisexDiona
-      Female: UnisexDiona
-      Unsexed: UnisexDiona
+    emoteSounds: UnisexDiona
   - type: Tag
     tags:
     - DoorBumpOpener

@@ -188,8 +188,7 @@
     - Crying
     - Whistle
   - type: Vocal
-    sounds:
-      Unsexed: UnisexSilicon
+    emoteSounds: UnisexSilicon
     wilhelmProbability: 0
   - type: DamagedSiliconAccent
   - type: UnblockableSpeech
@@ -438,8 +437,7 @@
     - Whistle
     # end Goobstation - Cyborg emote sounds
   - type: Vocal
-    sounds:
-      Unsexed: UnisexSiliconSyndicate
+    emoteSounds: UnisexSiliconSyndicate
   - type: PointLight
     color: "#dd200b"
   - type: BypassLock
@@ -493,8 +491,7 @@
     allowedEmotes:
     - Laugh
   - type: Vocal
-    sounds:
-      Unsexed: UnisexSiliconSyndicate
+    emoteSounds: UnisexSiliconSyndicate
   - type: PointLight
     color: "#dd200b"
   - type: BypassLock
@@ -563,8 +560,7 @@
     - Whistle
     # end Goobstation - Cyborg emote sounds
   - type: Vocal
-    sounds:
-      Unsexed: UnisexSiliconXenoborg
+    emoteSounds: UnisexSiliconXenoborg
     wilhelmProbability: 0
   - type: DamagedSiliconAccent
   - type: UnblockableSpeech

@@ -106,8 +106,7 @@
   - type: ReplacementAccent
     accent: genericAggressive
   - type: Vocal
-    sounds:
-      Unsexed: Bear
+    emoteSounds: Bear
   - type: InteractionPopup
     successChance: 0.25
     interactSuccessString: petting-success-bear
@@ -170,9 +169,8 @@
     speciesId: kangaroo
     templateId: spacekangaroo
   - type: Vocal
-    sounds:
-      Unsexed: Kangaroo
-  - type: LanguageSpeaker # Einstein Engines - Language
+    emoteSounds: Kangaroo
+  - type: LanguageSpeaker # Trauma - language instead of accent
     speaks:
     - Kangaroo
     understands:
@@ -285,10 +283,7 @@
     speechSounds: Arachnid
     allowedEmotes: ['Click', 'Chitter']
   - type: Vocal
-    sounds:
-      Male: UnisexArachnid
-      Female: UnisexArachnid
-      Unsexed: UnisexArachnid
+    emoteSounds: UnisexArachnid
   - type: TypingIndicator
     proto: spider
 
@@ -533,10 +528,7 @@
     speechSounds: SheepSpace
     speechVerb: Sheep
   - type: Vocal
-    sounds:
-      Female: SheepSpace
-      Male: SheepSpace
-      Unsexed: SheepSpace
+    emoteSounds: SheepSpace
 
 - type: entity
   parent: [SimpleSpaceMobBase, BaseMobAnimal, SolutionVermin, MobNightVision]

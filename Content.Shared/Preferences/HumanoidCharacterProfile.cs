@@ -6,11 +6,14 @@ using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
 using Content.Shared.CCVar;
+using Content.Shared.Chat.Prototypes;
+using Content.Shared.EntityEffects.Effects;
 using Content.Shared.GameTicking;
 using Content.Shared.Humanoid;
 using Content.Shared.Humanoid.Prototypes;
 using Content.Shared.Preferences.Loadouts;
 using Content.Shared.Roles;
+using Content.Shared.Speech.Components;
 using Content.Shared.Traits;
 using Robust.Shared.Collections;
 using Robust.Shared.Configuration;
@@ -35,6 +38,7 @@ namespace Content.Shared.Preferences
     public sealed partial class HumanoidCharacterProfile
     {
         public static readonly ProtoId<SpeciesPrototype> DefaultSpecies = "Human";
+        public static readonly ProtoId<EmoteSoundsPrototype> DefaultVoice = "MaleHuman";
         private static readonly Regex RestrictedNameRegex = new(@"[^A-Za-z0-9 '\-]");
         private static readonly Regex ICNameCaseRegex = new(@"^(?<word>\w)|\b(?<word>\w)(?=\w*$)");
 
@@ -91,6 +95,9 @@ namespace Content.Shared.Preferences
         public Sex Sex { get; private set; } = Sex.Male;
 
         [DataField]
+        public ProtoId<EmoteSoundsPrototype> Voice { get; set; } = DefaultVoice;
+
+        [DataField]
         public Gender Gender { get; private set; } = Gender.Male;
 
         /// <summary>
@@ -132,6 +139,7 @@ namespace Content.Shared.Preferences
             string species,
             int age,
             Sex sex,
+            ProtoId<EmoteSoundsPrototype> voice,
             Gender gender,
             HumanoidCharacterAppearance appearance,
             SpawnPriorityPreference spawnPriority,
@@ -150,6 +158,7 @@ namespace Content.Shared.Preferences
             Species = species;
             Age = age;
             Sex = sex;
+            Voice = voice;
             Gender = gender;
             Appearance = appearance;
             SpawnPriority = spawnPriority;
@@ -185,6 +194,7 @@ namespace Content.Shared.Preferences
                 other.Species,
                 other.Age,
                 other.Sex,
+                other.Voice,
                 other.Gender,
                 other.Appearance.Clone(),
                 other.SpawnPriority,
@@ -252,10 +262,12 @@ namespace Content.Shared.Preferences
 
             var sex = Sex.Unsexed;
             var age = 18;
+            var voice = DefaultVoice; // Banishing someone to no voice would be unfortunate
             if (prototypeManager.TryIndex<SpeciesPrototype>(species, out var speciesPrototype))
             {
                 sex = random.Pick(speciesPrototype.Sexes);
                 age = random.Next(speciesPrototype.MinAge, speciesPrototype.OldAge); // people don't look and keep making 119 year old characters with zero rp, cap it at middle aged
+                voice = speciesPrototype.DefaultSoundsBySex[(int)sex];
             }
 
             var gender = Gender.Epicene;
@@ -277,6 +289,7 @@ namespace Content.Shared.Preferences
             {
                 Name = name,
                 Sex = sex,
+                Voice = voice,
                 Age = age,
                 Gender = gender,
                 Species = species,
@@ -306,6 +319,11 @@ namespace Content.Shared.Preferences
         public HumanoidCharacterProfile WithSex(Sex sex)
         {
             return new(this) { Sex = sex };
+        }
+
+        public HumanoidCharacterProfile WithVoice(ProtoId<EmoteSoundsPrototype> voice)
+        {
+            return new(this) { Voice = voice };
         }
 
         public HumanoidCharacterProfile WithGender(Gender gender)
@@ -519,6 +537,10 @@ namespace Content.Shared.Preferences
                 _ => Sex.Male // Invalid enum values.
             };
 
+            var voice = Voice;
+            if (!speciesPrototype.Voices.Contains(voice))
+                voice = speciesPrototype.DefaultSoundsBySex[(int)sex];
+
             // ensure the species can be that sex and their age fits the founds
             if (!speciesPrototype.Sexes.Contains(sex))
                 sex = speciesPrototype.Sexes[0];
@@ -630,6 +652,7 @@ namespace Content.Shared.Preferences
             FlavorText = flavortext;
             Age = age;
             Sex = sex;
+            Voice = voice;
             Gender = gender;
             Appearance = appearance;
             SpawnPriority = spawnPriority;
@@ -752,6 +775,7 @@ namespace Content.Shared.Preferences
             hashCode.Add(Species);
             hashCode.Add(Age);
             hashCode.Add((int)Sex);
+            hashCode.Add(Voice);
             hashCode.Add((int)Gender);
             hashCode.Add(Appearance);
             // <Trauma>

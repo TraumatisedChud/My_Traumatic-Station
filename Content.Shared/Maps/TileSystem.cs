@@ -21,7 +21,6 @@ namespace Content.Shared.Maps;
 public sealed partial class TileSystem : EntitySystem
 {
     [Dependency] private IConfigurationManager _cfg = default!;
-    [Dependency] private IMapManager _mapManager = default!;
     [Dependency] private IRobustRandom _robustRandom = default!;
     [Dependency] private ITileDefinitionManager _tileDefinitionManager = default!;
     [Dependency] private SharedDecalSystem _decal = default!;
@@ -316,7 +315,7 @@ public sealed partial class TileSystem : EntitySystem
         }
 
         //Destroy any decals on the tile
-        var decals = _decal.GetDecalsInRange(gridUid, coordinates.SnapToGrid(EntityManager, _mapManager).Position, 0.5f);
+        var decals = _decal.GetDecalsInRange(gridUid, coordinates.SnapToGrid(EntityManager).Position, 0.5f);
         foreach (var decal in decals) // Trauma - decal entities
         {
             PredictedQueueDel(decal); // Trauma - just delete the decal entity

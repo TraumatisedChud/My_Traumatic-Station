@@ -15,7 +15,6 @@ namespace Content.Shared.Decals;
 // Trauma - completely rewrote decals to be entity based
 public abstract partial class SharedDecalSystem : EntitySystem
 {
-    [Dependency] protected IMapManager MapManager = default!;
     [Dependency] private MetaDataSystem _meta = default!;
     [Dependency] protected SharedMapSystem Map = default!;
     [Dependency] protected SharedTransformSystem Xform = default!;

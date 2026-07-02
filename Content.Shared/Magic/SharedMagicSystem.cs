@@ -62,7 +62,6 @@ public abstract partial class SharedMagicSystem : EntitySystem
     [Dependency] private CommonWizardSystem _wizard = default!;
     // </Trauma>
     [Dependency] private ISerializationManager _seriMan = default!;
-    [Dependency] private IMapManager _mapManager = default!;
     [Dependency] private SharedMapSystem _mapSystem = default!;
     [Dependency] private IRobustRandom _random = default!;
     [Dependency] private SharedGunSystem _gunSystem = default!;
@@ -484,7 +483,7 @@ public abstract partial class SharedMagicSystem : EntitySystem
         if (!_net.IsServer)
             return;
 
-        var ent = Spawn(proto, position.SnapToGrid(EntityManager, _mapManager));
+        var ent = Spawn(proto, position.SnapToGrid(EntityManager));
 
         if (lifetime != null)
         {

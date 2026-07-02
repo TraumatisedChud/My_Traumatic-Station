@@ -101,7 +101,7 @@ namespace Content.Server.GameTicking
         /// </remarks>
         private void LoadMaps()
         {
-            if (_mapManager.MapExists(DefaultMap))
+            if (_map.MapExists(DefaultMap))
                 return;
 
             AddGamePresetRules();
@@ -778,8 +778,6 @@ namespace Content.Server.GameTicking
                 Log.Error($"Caught exception while flushing entities for round restart: {e}");
             }
             // </Trauma>
-
-            _mapManager.Restart();
 
             _banManager.Restart();
 

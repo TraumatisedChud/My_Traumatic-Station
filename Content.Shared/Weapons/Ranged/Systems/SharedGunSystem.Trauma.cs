@@ -20,7 +20,6 @@ namespace Content.Shared.Weapons.Ranged.Systems;
 public abstract partial class SharedGunSystem
 {
     [Dependency] private InventorySystem _inventory = default!;
-    [Dependency] private SharedMapSystem _map = default!;
 
     /// <summary>
     /// Get a predicted random instance for an entity, specific to this tick.

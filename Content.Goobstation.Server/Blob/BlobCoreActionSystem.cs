@@ -44,8 +44,7 @@ public sealed partial class BlobCoreActionSystem : SharedBlobCoreActionSystem
     [Dependency] private IGameTiming _gameTiming = default!;
     [Dependency] private SharedTransformSystem _transform = default!;
     [Dependency] private DamageableSystem _damageableSystem = default!;
-    [Dependency] private MapSystem _mapSystem = default!;
-    [Dependency] private IMapManager _mapManager = default!;
+    [Dependency] private SharedMapSystem _map = default!;
     [Dependency] private BlobTileSystem _blobTileSystem = default!;
     //[Dependency] private GridFixtureSystem _gridFixture = default!;
 
@@ -95,7 +94,7 @@ public sealed partial class BlobCoreActionSystem : SharedBlobCoreActionSystem
         if (TerminatingOrDeleted(observer) || TerminatingOrDeleted(core))
             return;
 
-        var location = args.ClickLocation.AlignWithClosestGridTile(entityManager: EntityManager, mapManager: _mapManager);
+        var location = args.ClickLocation.AlignWithClosestGridTile(entityManager: EntityManager);
 
         if (!location.IsValid(EntityManager))
             return;
@@ -124,7 +123,7 @@ public sealed partial class BlobCoreActionSystem : SharedBlobCoreActionSystem
         }
         #endregion
 
-        var targetTile = _mapSystem.GetTileRef(gridUid.Value, grid, location);
+        var targetTile = _map.GetTileRef(gridUid.Value, grid, location);
 
         var targetTileEmpty = false;
         if (targetTile.Tile.IsEmpty)
@@ -135,7 +134,7 @@ public sealed partial class BlobCoreActionSystem : SharedBlobCoreActionSystem
             targetTileEmpty = true;
         }
 
-        if (_mapSystem.GetAnchoredEntities(gridUid.Value, grid, targetTile.GridIndices).Any(_tileQuery.HasComponent))
+        if (_map.GetAnchoredEntities(gridUid.Value, grid, targetTile.GridIndices).Any(_tileQuery.HasComponent))
         {
             return;
         }
@@ -182,7 +181,7 @@ public sealed partial class BlobCoreActionSystem : SharedBlobCoreActionSystem
                     !TryComp<MapGridComponent>(tilePos.GridUid, out var tileGrid))
                     continue;
 
-                var locPos = _mapSystem.WorldToLocal(tilePos.GridUid.Value,
+                var locPos = _map.WorldToLocal(tilePos.GridUid.Value,
                     tileGrid,
                     mapPos.Position + dir.GetOpposite().ToVec());
 
@@ -200,7 +199,7 @@ public sealed partial class BlobCoreActionSystem : SharedBlobCoreActionSystem
 
             var plating = _tileDefinitionManager["Plating"];
             var platingTile = new Tile(plating.TileId);
-            _mapSystem.SetTile(gridUid.Value, grid, location, platingTile);
+            _map.SetTile(gridUid.Value, grid, location, platingTile);
         }
 
         if (!_blobCoreSystem.TryUseAbility(core, cost, location))
@@ -217,7 +216,7 @@ public sealed partial class BlobCoreActionSystem : SharedBlobCoreActionSystem
 
     private EntityUid? FindNearBlobTile(EntityCoordinates coords, Entity<MapGridComponent> grid)
     {
-        var mobTile = _mapSystem.GetTileRef(grid, grid, coords);
+        var mobTile = _map.GetTileRef(grid, grid, coords);
 
         var adjacentTiles = new[]
         {
@@ -229,7 +228,7 @@ public sealed partial class BlobCoreActionSystem : SharedBlobCoreActionSystem
 
         foreach (var indices in adjacentTiles)
         {
-            var uid = _mapSystem.GetAnchoredEntities(grid, grid, indices)
+            var uid = _map.GetAnchoredEntities(grid, grid, indices)
                 .Where(_tileQuery.HasComponent)
                 .FirstOrNull();
 

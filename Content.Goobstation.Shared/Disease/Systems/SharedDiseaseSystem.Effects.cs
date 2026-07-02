@@ -27,7 +27,6 @@ public partial class SharedDiseaseSystem
     [Dependency] private SharedMapSystem _map = default!;
     [Dependency] private SharedMeleeWeaponSystem _melee = default!;
     [Dependency] private SharedPopupSystem _popup = default!;
-    [Dependency] private IMapManager _mapMan = default!;
     [Dependency] private TileSystem _tile = default!;
 
     public const float MaxEffectSeverity = 1f; // magic numbers are EVIL and BAD
@@ -150,7 +149,7 @@ public partial class SharedDiseaseSystem
             return;
         var xform = Transform(args.Ent);
         var mapPos = _transform.GetMapCoordinates(xform);
-        if (!_mapMan.TryFindGridAt(mapPos, out var gridUid, out var grid))
+        if (!_map.TryFindGridAt(mapPos, out var gridUid, out var grid))
             return;
         for (var i = 0; i < ent.Comp.Attempts; i++)
         {

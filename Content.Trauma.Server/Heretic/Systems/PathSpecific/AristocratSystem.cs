@@ -36,7 +36,6 @@ public sealed partial class AristocratSystem : EntitySystem
 {
     [Dependency] private IGameTiming _timing = default!;
     [Dependency] private IRobustRandom _rand = default!;
-    [Dependency] private IMapManager _mapMan = default!;
     [Dependency] private AtmosphereSystem _atmos = default!;
     [Dependency] private TileSystem _tile = default!;
     [Dependency] private EntityLookupSystem _lookup = default!;
@@ -198,7 +197,7 @@ public sealed partial class AristocratSystem : EntitySystem
             {
                 var offset = new Vector2(x, y);
 
-                var pos = coords.Offset(offset).SnapToGrid(EntityManager, _mapMan);
+                var pos = coords.Offset(offset).SnapToGrid(EntityManager);
                 tiles.Add(pos);
             }
         }

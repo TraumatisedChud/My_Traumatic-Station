@@ -60,7 +60,7 @@
     - Meat
 
 - type: entity
-  parent: OrganBaseExternal # Shitmed
+  parent: OrganBaseExternal # Trauma
   id: OrganBaseTorso
   name: torso
   abstract: true

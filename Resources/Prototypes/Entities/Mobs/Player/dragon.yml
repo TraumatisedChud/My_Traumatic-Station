@@ -222,32 +222,12 @@
   - type: GhostRole
     mindRoles:
     - MindRoleDragon
-  #- type: ActionGun # Goobstation - remove fireball because it's tied to lungs now
-  #  action: ActionDragonsBreath
-  #  gunProto: DragonsBreathGun
+  #- type: ActionGrant # Trauma - it's tied to lungs now
+  #  actions:
+  #  - ActionDragonsBreath
   - type: GuideHelp
     guides:
     - MinorAntagonists
-
-- type: entity
-  categories: [ HideSpawnMenu ]
-  id: DragonsBreathGun
-  name: dragon's lung
-  description: For dragon's breathing.
-  components:
-  - type: RechargeBasicEntityAmmo
-    rechargeCooldown: 5
-    rechargeSound:
-      path: /Audio/Animals/space_dragon_roar.ogg
-  - type: BasicEntityAmmoProvider
-    proto: ProjectileDragonsBreathSpread # Trauma - add Spread
-    capacity: 1
-    count: 1
-  - type: Gun
-    soundGunshot:
-      path: /Audio/Animals/space_dragon_roar.ogg
-    soundEmpty: null
-    projectileSpeed: 5
 
 - type: entity
   parent: BaseMobDragon
@@ -314,28 +294,26 @@
     event: !type:DevourActionEvent
 
 - type: entity
-  parent: [ BaseAction, DragonsBreathGun ] # Trauma - inherit from the gun too
+  parent: BaseAction
   id: ActionDragonsBreath
   name: "[color=orange]Dragon's Breath[/color]"
   description: Spew out flames at anyone foolish enough to attack you!
   components:
-  # <Trauma>
-  - type: GunAction
-  # </Trauma>
   - type: Action
-    # <Trauma>
-    raiseOnAction: true # action does the logic instead of the mob
     useDelay: 5
-    # </Trauma>
     # TODO: actual sprite and iconOn
     icon: { sprite : Objects/Weapons/Guns/Projectiles/magic.rsi, state: fireball }
     itemIconStyle: NoItem # Trauma - was BigAction, dont show lungs
     priority: 2
+    sound: !type:SoundPathSpecifier
+      path: /Audio/Animals/space_dragon_breath.ogg
   - type: TargetAction
     checkCanAccess: false
     range: 0
   - type: WorldTargetAction
-    event: !type:ActionGunShootEvent
+    event: !type:ProjectileSpellEvent
+      prototype: ProjectileDragonsBreathSpread # Trauma - added Spread
+      projectileSpeed: 5
 
 - type: entity
   parent: Smoke

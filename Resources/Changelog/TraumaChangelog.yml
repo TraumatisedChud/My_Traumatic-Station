@@ -11029,3 +11029,10 @@ Entries:
   id: 1232
   time: '2026-07-04T08:53:47.0000000+00:00'
   url: https://github.com/Trauma-Station/Trauma-Station/pull/3385
+- author: TechnicFighter
+  changes:
+  - type: Add
+    message: Added the Caveman Accent. Ooga Booga, me want insuls!
+  id: 1233
+  time: '2026-07-04T09:05:10.0000000+00:00'
+  url: https://github.com/Trauma-Station/Trauma-Station/pull/3411

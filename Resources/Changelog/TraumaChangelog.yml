@@ -11070,3 +11070,12 @@ Entries:
   id: 1237
   time: '2026-07-05T03:59:33.0000000+00:00'
   url: https://github.com/Trauma-Station/Trauma-Station/pull/3435
+- author: Wizard25671
+  changes:
+  - type: Fix
+    message: >-
+      Fixed being unable to make Rev Ball Bearings, They are now made at the
+      industrial forge
+  id: 1238
+  time: '2026-07-05T09:07:41.0000000+00:00'
+  url: https://github.com/Trauma-Station/Trauma-Station/pull/3441

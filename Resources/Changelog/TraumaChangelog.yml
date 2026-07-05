@@ -11102,3 +11102,12 @@ Entries:
   id: 1239
   time: '2026-07-05T09:12:07.0000000+00:00'
   url: https://github.com/Trauma-Station/Trauma-Station/pull/3439
+- author: TurboTrackerss14
+  changes:
+  - type: Add
+    message: >-
+      Librarian now has their own caneblade style, with the old igniting
+      caneblade returning to being syndicate only.
+  id: 1240
+  time: '2026-07-05T22:18:43.0000000+00:00'
+  url: https://github.com/Trauma-Station/Trauma-Station/pull/3355

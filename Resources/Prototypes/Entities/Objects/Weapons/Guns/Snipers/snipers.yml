@@ -140,6 +140,9 @@
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/sniper.ogg
     resetOnHandSelected: false # Goobstation - quickscope pro
+  - type: CustomSpriteAmmoCounter
+    loadedAmmoSprite: Interface/ItemStatus/Sniper_Cartriges/not_spent.png
+    spentAmmoSprite: Interface/ItemStatus/Sniper_Cartriges/spent.png
   #- type: BallisticAmmoProvider - Goobstation - Magazine Sniper
   #  whitelist:
   #    tags:

@@ -143,7 +143,8 @@ public abstract partial class EntityCondition
 /// </summary>
 /// <param name="Condition">The Condition we're checking</param>
 [ByRefEvent]
-public record struct EntityConditionEvent<T>(T Condition, EntityUid? user) where T : EntityConditionBase<T> // Trauma - added user
+[DataRecord]
+public partial record struct EntityConditionEvent<T>(T Condition, EntityUid? user) where T : EntityConditionBase<T> // Trauma - added user
 {
     /// <summary>
     /// The result of our check, defaults to false if nothing handles it.

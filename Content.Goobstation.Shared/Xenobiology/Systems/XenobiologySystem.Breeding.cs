@@ -107,7 +107,7 @@ public partial class XenobiologySystem
     /// <param name="parent">The original entity.</param>
     /// <param name="newEntityProto">The proto of the entity being spawned.</param>
     /// <param name="selectedBreed">The selected breed of the entity.</param>
-    private Entity<SlimeComponent>? SpawnSlime(EntityUid parent, [ForbidLiteral] EntProtoId<SlimeComponent> newEntityProto, ProtoId<BreedPrototype> selectedBreed)
+    private Entity<SlimeComponent>? SpawnSlime(EntityUid parent, [ForbidLiteral] EntProtoId newEntityProto, ProtoId<BreedPrototype> selectedBreed)
     {
         if (Deleted(parent) ||
             !ProtoMan.Resolve(selectedBreed, out var newBreed))
@@ -115,10 +115,7 @@ public partial class XenobiologySystem
 
         var newEntityUid = PredictedSpawnNextToOrDrop(newEntityProto, parent, null, newBreed.Components);
         if (!TryComp<SlimeComponent>(newEntityUid, out var newSlime))
-        {
-            PredictedDel(newEntityUid);
             return null;
-        }
 
         if (newSlime.ShouldHaveShader && newSlime.Shader != null)
             _appearance.SetData(newEntityUid, XenoSlimeVisuals.Shader, newSlime.Shader);

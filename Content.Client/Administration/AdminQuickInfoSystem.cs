@@ -1,4 +1,4 @@
-﻿using System.Linq;
+using System.Linq;
 using Content.Client.Administration.Systems;
 using Content.Client.Stylesheets;
 using Content.Shared.Administration;

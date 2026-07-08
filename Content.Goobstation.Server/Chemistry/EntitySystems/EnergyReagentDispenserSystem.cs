@@ -208,4 +208,3 @@ public sealed partial class EnergyReagentDispenserSystem : EntitySystem
     private void OnMapInit(Entity<EnergyReagentDispenserComponent> entity, ref MapInitEvent args) =>
         _itemSlotsSystem.AddItemSlot(entity.Owner, SharedEnergyReagentDispenser.OutputSlotName, entity.Comp.EnergyBeakerSlot);
 }
-

@@ -312,7 +312,7 @@
     range: 0
   - type: WorldTargetAction
     event: !type:ProjectileSpellEvent
-      prototype: ProjectileDragonsBreathSpread # Trauma - added Spread
+      prototype: ProjectileDragonsBreath
       projectileSpeed: 5
 
 - type: entity

@@ -115,7 +115,7 @@ namespace Content.YAMLLinter
             #pragma warning disable RA0004
             var serverErrors = serverTask.Result;
             var clientErrors = clientTask.Result;
-            #pragma warning restroe RA0004
+            #pragma warning restore RA0004
             // </Trauma>
 
             foreach (var (key, val) in serverErrors.YamlErrors)

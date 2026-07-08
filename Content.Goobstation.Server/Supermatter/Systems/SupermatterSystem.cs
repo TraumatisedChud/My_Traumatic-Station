@@ -644,7 +644,7 @@ public sealed partial class SupermatterSystem : SharedSupermatterSystem
         if (sm.SliverRemoved)
             return;
 
-        if (!_tool.HasQuality(args.Used, Slicing));
+        if (!_tool.HasQuality(args.Used, Slicing))
             return;
 
         var dae = new DoAfterArgs(EntityManager, args.User, 30f, new SupermatterDoAfterEvent(), uid)

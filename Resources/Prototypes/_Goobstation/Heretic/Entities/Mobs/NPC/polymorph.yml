@@ -56,7 +56,7 @@
     sprite: Structures/Specific/Anomalies/Cores/gravity_core.rsi
     state: core
   - type: NightVision
-    color: white
+    lightingColor: white
   - type: Eye
     visMask:
     - Ghost
@@ -80,7 +80,7 @@
     channels:
     - MansusLink
   - type: NightVision
-    color: white
+    lightingColor: white
   - type: ActionGrant
     actions:
     - ActionMirrorJaunt

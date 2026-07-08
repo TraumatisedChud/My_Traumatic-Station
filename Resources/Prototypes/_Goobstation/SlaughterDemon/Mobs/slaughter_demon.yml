@@ -143,10 +143,7 @@
     sound:
       path: /Audio/Effects/demon_dies.ogg
   - type: Vocal
-    sounds:
-      Male: SlaughterDemon
-      Female: SlaughterDemon
-      Unsexed: SlaughterDemon
+    emoteSounds: SlaughterDemon
   - type: ZombieImmune
   - type: SlowOnDamage
     speedModifierThresholds:

@@ -553,10 +553,7 @@
     emotes:
     - BrullbarHowl
   - type: Vocal
-    sounds:
-      Male: Brullbar
-      Female: Brullbar
-      Unsexed: Brullbar
+    emoteSounds: Brullbar
   - type: NpcFactionMember
     factions:
     - SimpleHostile
@@ -891,10 +888,7 @@
       collection: BikeHorn
     animation: WeaponArcFist
   - type: Vocal
-    sounds:
-      Male: ClownGoblin
-      Female: ClownGoblin
-      Unsexed: ClownGoblin
+    emoteSounds: ClownGoblin
   - type: LanguageSpeaker
     speaks:
     - TauCetiBasic

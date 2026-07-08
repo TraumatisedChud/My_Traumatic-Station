@@ -103,8 +103,7 @@
     channels:
     - Syndicate
   - type: Vocal
-    sounds:
-      Unsexed: EmoteC4
+    emoteSounds: EmoteC4
   - type: Emoting
   # </Trauma>
   - type: Sprite

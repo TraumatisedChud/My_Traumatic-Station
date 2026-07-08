@@ -147,7 +147,7 @@
         Piercing: 10
 
 - type: entity
-  parent: [BaseMobHereticGhoul, MobGhoulStalkerBase]
+  parent: [BaseMobHereticGhoul, MobGhoulStalkerBase, MobNightVision]
   id: MobGhoulStalker
   components:
   - type: Ghoul
@@ -165,11 +165,7 @@
     - ActionActivateEmp
     - ActionHereticShapeshift
   - type: ThermalVision
-    thermalShader: null
-    isActive: true
     color: white
-    drawOverlay: false
-    lightRadius: 0
     toggleAction: null
 
 - type: entity
@@ -240,7 +236,7 @@
     mindRoles:
     - MindRoleGhoul
   - type: NightVision
-    color: white
+    lightingColor: white
   - type: Eye
     drawFov: false
   - type: Viewcone
@@ -289,7 +285,7 @@
   - type: FlashImmunity
     showInExamine: false
   - type: NightVision
-    color: aquamarine
+    lightingColor: aquamarine
   - type: MeleeWeapon
     animation: WeaponArcPunch
     soundHit:

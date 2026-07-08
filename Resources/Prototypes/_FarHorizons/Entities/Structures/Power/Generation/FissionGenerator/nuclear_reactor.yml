@@ -454,10 +454,10 @@
   components:
   - type: Sprite
     layers:
-    - state: arrow
+    - state: blue_arrow
       rotation: 0
       offset: -1, 2
-    - state: arrow
+    - state: blue_arrow
       rotation: 180
       offset: 1, 2
 

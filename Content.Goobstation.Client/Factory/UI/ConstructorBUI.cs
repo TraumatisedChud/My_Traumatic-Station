@@ -51,7 +51,7 @@ public sealed partial class ConstructorBUI : BoundUserInterface
                 var proto = item.ConstructionProto;
                 var ent = item.EntityProto;
                 _id = proto.ID;
-                _menu.SetRecipeInfo(proto.Name, proto.Description, ent,
+                _menu.SetRecipeInfo(proto.Name ?? ent.Name, proto.Description ?? ent.Description, ent,
                     proto.Type != ConstructionType.Item, true, // TODO: favourites
                     true,
                     proto);

@@ -124,10 +124,7 @@
     - Bubblish
     - TauCetiBasic
   - type: Vocal
-    sounds:
-      Male: AnimalSlime
-      Female: AnimalSlime
-      Unsexed: AnimalSlime
+    emoteSounds: AnimalSlime
   # </Trauma>
   - type: GhostTakeoverAvailable
   - type: GhostRole

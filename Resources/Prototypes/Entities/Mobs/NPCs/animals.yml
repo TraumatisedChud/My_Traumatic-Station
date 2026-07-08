@@ -1618,10 +1618,7 @@
   - type: HumanoidProfile
     species: Monkey
   - type: Vocal
-    sounds:
-      Male: MonkeyMode
-      Female: MonkeyMode
-      Unsexed: MonkeyMode
+    emoteSounds: MonkeyMode
     wilhelmProbability: 0.001
   - type: DiseaseCarrier
   - type: UserInterface

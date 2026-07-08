@@ -35,10 +35,7 @@
   - type: Vocal
     wilhelm: "/Audio/_Goobstation/Voice/badtothebone.ogg"
     wilhelmProbability: 0.1
-    sounds:
-      Male: Skeleton
-      Female: Skeleton
-      Unsexed: Skeleton
+    emoteSounds: Skeleton
   - type: Sprite
     drawdepth: Mobs
     sprite: _Goobstation/Wraith/Mobs/skeletoncommander.rsi
@@ -188,10 +185,7 @@
       gender: male
       proper: true
   - type: Vocal
-    sounds:
-      Male: UnisexArachnid
-      Female: UnisexArachnid
-      Unsexed: UnisexArachnid
+    emoteSounds: UnisexArachnid
   - type: LanguageSpeaker
     speaks:
     - Dog
@@ -268,10 +262,7 @@
     - DoorBumpOpener
     - VimPilot
   - type: Vocal
-    sounds:
-      Male: Cerberus
-      Female: Cerberus
-      Unsexed: Cerberus
+    emoteSounds: Cerberus
   - type: LanguageSpeaker
     speaks:
     - Dog

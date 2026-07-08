@@ -42,8 +42,7 @@
     speechSounds: Duende
     allowedEmotes: [Laugh]
   - type: Vocal
-    sounds:
-      Unsexed: Duende
+    emoteSounds: Duende
   - type: LanguageSpeaker
     speaks:
     - FloorGoblin

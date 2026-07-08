@@ -131,13 +131,11 @@
         layer:
         - LowImpassable
         hard: false
-  - type: LanguageSpeaker # Trauma
+  - type: LanguageSpeaker
     speaks:
     - Xeno
-#    - XenoHivemind # Trauma
     understands:
     - Xeno
-#    - XenoHivemind # Trauma
     - Hissing
     - Draconic
   - type: Speech
@@ -146,15 +144,11 @@
   - type: ReplacementAccent
     accent: xeno
   - type: Vocal
-    sounds:
-      Male: Xenomorph
-      Female: Xenomorph
-      Unsexed: Xenomorph
-  - type: CollectiveMind # Trauma
+    emoteSounds: Xenomorph
+  - type: CollectiveMind
     defaultChannel: Xenomorphivemind
     channels:
     - Xenomorphivemind
-  # <Trauma>
   - type: ThermalVision
     toggleAction: ToggleThermalVisionXenomorph
     color: white
@@ -189,4 +183,3 @@
     canEmag: false
     canExamine: false
   - type: FaceHuggerLeap
-  # </Trauma>

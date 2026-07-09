@@ -24339,61 +24339,21 @@ entities:
     - type: Transform
       pos: 25.5,4.5
       parent: 2
-    - type: ContainerContainer
-      containers:
-        DisposalUnit: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
-        disposals: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
   - uid: 3854
     components:
     - type: Transform
       pos: 32.5,0.5
       parent: 2
-    - type: ContainerContainer
-      containers:
-        DisposalUnit: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
-        disposals: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
   - uid: 3855
     components:
     - type: Transform
       pos: -17.5,9.5
       parent: 2
-    - type: ContainerContainer
-      containers:
-        DisposalUnit: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
-        disposals: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
   - uid: 3856
     components:
     - type: Transform
       pos: -17.5,-4.5
       parent: 2
-    - type: ContainerContainer
-      containers:
-        DisposalUnit: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
-        disposals: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
   - uid: 3857
     components:
     - type: Transform
@@ -24404,16 +24364,6 @@ entities:
     - type: Transform
       pos: -11.5,13.5
       parent: 2
-    - type: ContainerContainer
-      containers:
-        DisposalUnit: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
-        disposals: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
   - uid: 3859
     components:
     - type: Transform
@@ -24429,91 +24379,31 @@ entities:
     - type: Transform
       pos: 17.5,-14.5
       parent: 2
-    - type: ContainerContainer
-      containers:
-        DisposalUnit: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
-        disposals: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
   - uid: 3862
     components:
     - type: Transform
       pos: 0.5,-9.5
       parent: 2
-    - type: ContainerContainer
-      containers:
-        DisposalUnit: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
-        disposals: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
   - uid: 3863
     components:
     - type: Transform
       pos: 22.5,-3.5
       parent: 2
-    - type: ContainerContainer
-      containers:
-        DisposalUnit: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
-        disposals: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
   - uid: 3864
     components:
     - type: Transform
       pos: 8.5,-10.5
       parent: 2
-    - type: ContainerContainer
-      containers:
-        DisposalUnit: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
-        disposals: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
   - uid: 3865
     components:
     - type: Transform
       pos: 20.5,20.5
       parent: 2
-    - type: ContainerContainer
-      containers:
-        DisposalUnit: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
-        disposals: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
   - uid: 3866
     components:
     - type: Transform
       pos: -17.5,-14.5
       parent: 2
-    - type: ContainerContainer
-      containers:
-        DisposalUnit: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
-        disposals: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
   - uid: 3867
     components:
     - type: Transform
@@ -24521,11 +24411,7 @@ entities:
       parent: 2
     - type: ContainerContainer
       containers:
-        DisposalUnit: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
-        disposals: !type:Container
+        DisposalUnitComponent: !type:Container
           showEnts: False
           occludes: True
           ents:
@@ -24535,31 +24421,11 @@ entities:
     - type: Transform
       pos: -15.5,17.5
       parent: 2
-    - type: ContainerContainer
-      containers:
-        DisposalUnit: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
-        disposals: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
   - uid: 3870
     components:
     - type: Transform
       pos: -34.5,-9.5
       parent: 2
-    - type: ContainerContainer
-      containers:
-        DisposalUnit: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
-        disposals: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
   - uid: 3871
     components:
     - type: Transform
@@ -24570,31 +24436,11 @@ entities:
     - type: Transform
       pos: -30.5,8.5
       parent: 2
-    - type: ContainerContainer
-      containers:
-        DisposalUnit: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
-        disposals: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
   - uid: 3873
     components:
     - type: Transform
       pos: -33.5,-1.5
       parent: 2
-    - type: ContainerContainer
-      containers:
-        DisposalUnit: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
-        disposals: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
 - proto: DisposalYJunction
   entities:
   - uid: 3874

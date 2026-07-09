@@ -1201,16 +1201,12 @@ entities:
           showEnts: False
           occludes: True
           ent: 83
-        disposals: !type:Container
+        DisposalUnitComponent: !type:Container
           showEnts: False
           occludes: True
           ents:
           - 84
           - 85
-        solutions: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
 - proto: ToolboxElectricalTurretFilled
   entities:
   - uid: 155

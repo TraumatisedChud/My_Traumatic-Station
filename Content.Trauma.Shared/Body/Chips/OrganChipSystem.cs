@@ -19,7 +19,6 @@ public sealed partial class OrganChipSystem : EntitySystem
 {
     [Dependency] private BodySystem _body = default!;
     [Dependency] private IGameTiming _timing = default!;
-    [Dependency] private IPrototypeManager _proto = default!;
     [Dependency] private SharedContainerSystem _container = default!;
     [Dependency] private SharedHandsSystem _hands = default!;
     [Dependency] private SharedDoAfterSystem _doAfter = default!;
@@ -349,7 +348,7 @@ public sealed partial class OrganChipSystem : EntitySystem
 
     private string OrganName(EntityUid uid)
         => _body.GetCategory(uid) is { } category
-            ? _proto.Index(category).Name.ToLower()
+            ? ProtoMan.Index(category).Name.ToLower()
             : Name(uid);
 
     public void InstallChip(EntityUid mob, [ForbidLiteral] EntProtoId<OrganChipComponent> id)

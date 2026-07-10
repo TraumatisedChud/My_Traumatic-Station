@@ -11343,3 +11343,12 @@ Entries:
   id: 1252
   time: '2026-07-10T12:03:56.0000000+00:00'
   url: https://github.com/Trauma-Station/Trauma-Station/pull/3480
+- author: deltanedas
+  changes:
+  - type: Fix
+    message: Fixed not being able to heal gunshots with surgery.
+  - type: Fix
+    message: A bunch of things now heal/check for ballistic damage.
+  id: 1253
+  time: '2026-07-10T12:52:15.0000000+00:00'
+  url: https://github.com/Trauma-Station/Trauma-Station/pull/3502

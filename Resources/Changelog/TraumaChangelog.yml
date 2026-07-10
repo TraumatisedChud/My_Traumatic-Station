@@ -11317,3 +11317,12 @@ Entries:
   id: 1250
   time: '2026-07-10T10:05:34.0000000+00:00'
   url: https://github.com/Trauma-Station/Trauma-Station/pull/3400
+- author: deltanedas
+  changes:
+  - type: Fix
+    message: Taming xenobio slimes by petting them actually works now...
+  - type: Add
+    message: Added super dwarves...
+  id: 1251
+  time: '2026-07-10T11:36:48.0000000+00:00'
+  url: https://github.com/Trauma-Station/Trauma-Station/pull/3485

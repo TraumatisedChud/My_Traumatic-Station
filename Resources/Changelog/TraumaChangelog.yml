@@ -11366,3 +11366,10 @@ Entries:
   id: 1255
   time: '2026-07-10T14:20:16.0000000+00:00'
   url: https://github.com/Trauma-Station/Trauma-Station/pull/3506
+- author: deltanedas
+  changes:
+  - type: Add
+    message: rework ling pending Removed.
+  id: 1256
+  time: '2026-07-10T14:42:55.0000000+00:00'
+  url: https://github.com/Trauma-Station/Trauma-Station/pull/3508

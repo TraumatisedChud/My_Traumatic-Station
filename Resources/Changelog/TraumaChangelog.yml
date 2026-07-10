@@ -11387,3 +11387,12 @@ Entries:
   id: 1258
   time: '2026-07-10T15:13:02.0000000+00:00'
   url: https://github.com/Trauma-Station/Trauma-Station/pull/3510
+- author: deltanedas
+  changes:
+  - type: Remove
+    message: Derotated nume station, it was abandoned and needs a lot of work.
+  - type: Remove
+    message: Derotated atlas, amber, cluster, omega and packed temporarily.
+  id: 1259
+  time: '2026-07-10T15:24:02.0000000+00:00'
+  url: https://github.com/Trauma-Station/Trauma-Station/pull/3507

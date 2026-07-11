@@ -11405,3 +11405,16 @@ Entries:
   id: 1260
   time: '2026-07-11T01:27:21.0000000+00:00'
   url: https://github.com/Trauma-Station/Trauma-Station/pull/3512
+- author: Aviu
+  changes:
+  - type: Tweak
+    message: Viewcone decrease on masks and helmets lowered.
+  - type: Remove
+    message: Berets no longer increase viewcone.
+  - type: Tweak
+    message: Sec/ert/syndi/swat/half gas masks no longer modify your viewcone.
+  - type: Tweak
+    message: Flesh worm now has 360 degree vision.
+  id: 1261
+  time: '2026-07-11T14:46:22.0000000+00:00'
+  url: https://github.com/Trauma-Station/Trauma-Station/pull/3517

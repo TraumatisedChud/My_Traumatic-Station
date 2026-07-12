@@ -11442,3 +11442,10 @@ Entries:
   id: 1263
   time: '2026-07-12T22:03:10.0000000+00:00'
   url: https://github.com/Trauma-Station/Trauma-Station/pull/3533
+- author: Aineias1
+  changes:
+  - type: Tweak
+    message: Re-rotated atlas, amber, cluster, omega and packed temporarily.
+  id: 1264
+  time: '2026-07-12T22:09:05.0000000+00:00'
+  url: https://github.com/Trauma-Station/Trauma-Station/pull/3528

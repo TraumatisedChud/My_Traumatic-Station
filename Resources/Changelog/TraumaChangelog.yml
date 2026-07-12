@@ -11427,3 +11427,18 @@ Entries:
   id: 1262
   time: '2026-07-11T20:49:38.0000000+00:00'
   url: https://github.com/Trauma-Station/Trauma-Station/pull/3399
+- author: deltanedas
+  changes:
+  - type: Fix
+    message: Fixed mail tearing not stopping if you moved the mail away
+  - type: Fix
+    message: IPC battery alert now works, and battery draining is predicted.
+  - type: Fix
+    message: >-
+      Fixed wing fang chu recipe using 83ml of soy sauce (2.9 oz) now its just 1
+      packet's worth.
+  - type: Fix
+    message: Fixed decapoids and plasmamen using human sounds.
+  id: 1263
+  time: '2026-07-12T22:03:10.0000000+00:00'
+  url: https://github.com/Trauma-Station/Trauma-Station/pull/3533

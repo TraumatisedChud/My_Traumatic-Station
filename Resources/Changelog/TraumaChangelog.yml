@@ -11449,3 +11449,10 @@ Entries:
   id: 1264
   time: '2026-07-12T22:09:05.0000000+00:00'
   url: https://github.com/Trauma-Station/Trauma-Station/pull/3528
+- author: deltanedas
+  changes:
+  - type: Fix
+    message: Fixed being able to transform faith/iradomini into other nullrods.
+  id: 1265
+  time: '2026-07-12T23:38:03.0000000+00:00'
+  url: https://github.com/Trauma-Station/Trauma-Station/pull/3539

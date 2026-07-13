@@ -11493,3 +11493,19 @@ Entries:
   id: 1270
   time: '2026-07-13T18:14:24.0000000+00:00'
   url: https://github.com/Trauma-Station/Trauma-Station/pull/3545
+- author: Wizard25671
+  changes:
+  - type: Add
+    message: Added a new guidebook entry for Synthflesh in the solids section
+  - type: Tweak
+    message: >-
+      Decreased the metabolism speed for Dermaline, Bicardine and Dylovene down
+      to 0.25u however healing and OD damage has been adjusted to heal the same
+      amount
+  - type: Tweak
+    message: >-
+      Medibots now inject less Tricordrazine and now inject Morphine instead of
+      Chloral Hydrate when Emagged
+  id: 1271
+  time: '2026-07-13T18:46:56.0000000+00:00'
+  url: https://github.com/Trauma-Station/Trauma-Station/pull/3466

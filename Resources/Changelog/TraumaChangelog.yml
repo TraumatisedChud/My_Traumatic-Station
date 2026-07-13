@@ -11479,3 +11479,10 @@ Entries:
   id: 1268
   time: '2026-07-13T02:12:02.0000000+00:00'
   url: https://github.com/Trauma-Station/Trauma-Station/pull/3541
+- author: Aviu
+  changes:
+  - type: Fix
+    message: Flashes work now.
+  id: 1269
+  time: '2026-07-13T02:19:23.0000000+00:00'
+  url: https://github.com/Trauma-Station/Trauma-Station/pull/3511

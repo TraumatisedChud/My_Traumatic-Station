@@ -11520,3 +11520,10 @@ Entries:
   id: 1272
   time: '2026-07-13T18:48:55.0000000+00:00'
   url: https://github.com/Trauma-Station/Trauma-Station/pull/3500
+- author: NoElkaTheGod
+  changes:
+  - type: Tweak
+    message: Freighter Transport was updated once more. Thank you for the feedback.
+  id: 1273
+  time: '2026-07-14T05:57:08.0000000+00:00'
+  url: https://github.com/Trauma-Station/Trauma-Station/pull/3519

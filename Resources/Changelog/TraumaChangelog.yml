@@ -11527,3 +11527,12 @@ Entries:
   id: 1273
   time: '2026-07-14T05:57:08.0000000+00:00'
   url: https://github.com/Trauma-Station/Trauma-Station/pull/3519
+- author: assripper.
+  changes:
+  - type: Tweak
+    message: >-
+      the xenomorph praetorians color palette is now more consistent with the
+      other xenomorphs
+  id: 1274
+  time: '2026-07-14T06:18:22.0000000+00:00'
+  url: https://github.com/Trauma-Station/Trauma-Station/pull/3548

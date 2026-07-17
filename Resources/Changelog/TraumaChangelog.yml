@@ -11563,3 +11563,10 @@ Entries:
   id: 1277
   time: '2026-07-17T04:53:49.0000000+00:00'
   url: https://github.com/Trauma-Station/Trauma-Station/pull/3572
+- author: Aineias1
+  changes:
+  - type: Remove
+    message: Freighter enlisted in chud wars.
+  id: 1278
+  time: '2026-07-17T05:12:37.0000000+00:00'
+  url: https://github.com/Trauma-Station/Trauma-Station/pull/3562

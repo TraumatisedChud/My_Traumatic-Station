@@ -11584,3 +11584,26 @@ Entries:
   id: 1280
   time: '2026-07-17T08:45:46.0000000+00:00'
   url: https://github.com/Trauma-Station/Trauma-Station/pull/3576
+- author: Aviu
+  changes:
+  - type: Add
+    message: >-
+      Void chill nerfed, void conduit now has 1 charge requiring you to break
+      your blade. Void armor effect made not useless.
+  - type: Add
+    message: You can now fish in reality fractures.
+  - type: Add
+    message: New heretic t3 side knowledge.
+  - type: Add
+    message: >-
+      Lock armor makes you invisible to people far away at cost of lower brute
+      resists.
+  - type: Tweak
+    message: Flesh mimic hp halved, flesh armor now spawns flesh mimics 50% more often.
+  - type: Tweak
+    message: Unfathomable curio and mask of madness buffed, curio is t2 side now.
+  - type: Tweak
+    message: 'Mansus grasp stamina damage: 80 -> 40.'
+  id: 1281
+  time: '2026-07-17T09:26:46.0000000+00:00'
+  url: https://github.com/Trauma-Station/Trauma-Station/pull/3546

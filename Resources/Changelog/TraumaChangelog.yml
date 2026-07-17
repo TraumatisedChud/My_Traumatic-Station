@@ -11675,3 +11675,12 @@ Entries:
   id: 1289
   time: '2026-07-17T20:46:52.0000000+00:00'
   url: https://github.com/Trauma-Station/Trauma-Station/pull/3594
+- author: deltanedas
+  changes:
+  - type: Tweak
+    message: Lathes can now have their recipe and quantity changed by circuits.
+  - type: Fix
+    message: Fixed circuits not handling pulse signals properly.
+  id: 1290
+  time: '2026-07-17T20:54:19.0000000+00:00'
+  url: https://github.com/Trauma-Station/Trauma-Station/pull/3592

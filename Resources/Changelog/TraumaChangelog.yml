@@ -11684,3 +11684,10 @@ Entries:
   id: 1290
   time: '2026-07-17T20:54:19.0000000+00:00'
   url: https://github.com/Trauma-Station/Trauma-Station/pull/3592
+- author: TraumaTised
+  changes:
+  - type: Tweak
+    message: Urist has had a rough time in hell...
+  id: 1291
+  time: '2026-07-18T06:25:13.0000000+00:00'
+  url: https://github.com/Trauma-Station/Trauma-Station/pull/3601

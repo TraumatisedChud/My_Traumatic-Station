@@ -127,8 +127,8 @@
 - type: entity
   parent: BaseDemon
   id: MinorDemonGuy
-  name: Twisted Clown
-  description: What ends up happening when a clown pies one too many chaplains. Actions have consequences
+  name: twisted clown
+  description: What ends up happening when a clown pies one too many chaplains. Actions have consequences.
   components:
   - type: WaddleAnimation
   - type: Sprite
@@ -165,7 +165,7 @@
   parent: BaseDemon
   id: MinorDemonIncel
   name: jealousy incarnate
-  description: A horrid creature born in the second layer of Hell, tiringly talkitive.
+  description: A horrid creature born in the second layer of Hell, tiringly talkative.
   components:
   - type: Sprite
     sprite: _Trauma/Mobs/Monsters/Demons/incel.rsi
@@ -200,7 +200,7 @@
 - type: entity
   parent: [ BaseDemon, InventoryBase ]
   id: MinorDemonUrist
-  name: Sinner
+  name: sinner
   description: A wicked human sent to suffer forever in Hell.
   components:
   - type: Sprite
@@ -246,7 +246,7 @@
   parent: BaseDemon
   id: MinorDemonIan
   name: Flesh Hound
-  description: After enough time in Hell, some souls begin to revert to more...primal forms.
+  description: After enough time in Hell, some souls begin to revert to more... primal forms.
   components:
   - type: Sprite
     sprite: _Trauma/Mobs/Monsters/Demons/ian.rsi
@@ -973,7 +973,7 @@
 - type: entity
   parent: BaseDemon
   id: MajorDemonGhost
-  name: Spectre # TODO: let him talk to deadchat
+  name: Spectre
   description: Ripped from their bodies, they seek to warm their hands on the flesh of the living.
   components:
   - type: Sprite

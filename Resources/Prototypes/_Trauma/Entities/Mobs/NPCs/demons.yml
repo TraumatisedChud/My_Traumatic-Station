@@ -911,7 +911,7 @@
   parent: BaseDemon
   id: MajorDemonSteamer
   name: steamer
-  description: Keep the flames of Hell warm for especially wicked sinners.
+  description: Steamers are beings that feed of the suffering of sapient creatures, this agony manifests into red hot necter within the gut. 
   components:
   - type: Sprite
     sprite: _Trauma/Mobs/Monsters/Demons/steamer.rsi

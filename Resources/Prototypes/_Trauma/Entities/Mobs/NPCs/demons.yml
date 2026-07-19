@@ -518,51 +518,6 @@
 
 - type: entity
   parent: BaseDemon
-  id: MediumDemonGhost
-  name: Spectre # TODO: let him talk to deadchat
-  description: Ripped from their bodies, they seek to warm their hands on the flesh of the living.
-  components:
-  - type: Sprite
-    sprite: _Trauma/Mobs/Monsters/Demons/ghost.rsi
-  - type: MeleeWeapon
-    range: 1
-    soundHit:
-      path: /Audio/Effects/demon_attack1.ogg
-    damage:
-      types:
-        Cold: 10
-    altDisarm: false
-    canWideSwing: true
-  - type: Destructible
-    thresholds:
-    - trigger:
-        !type:DamageTrigger
-        damage: 25
-      behaviors:
-      - !type:GibBehavior
-        recursive: false
-      - !type:SpawnEntitiesBehavior
-        spawn:
-          BaseDemonSoulFragment:
-            min: 1
-            max: 2
-  - type: Fixtures
-    fixtures:
-      projectile:
-        shape:
-          !type:PhysShapeAabb
-          bounds: "-0.1,-0.2,0.1,0.2"
-        hard: false
-        mask:
-        - Opaque
-
-- type: entity
-  parent: [ ControlledDemon, MediumDemonGhost ]
-  id: MediumDemonGhostControlled
-  suffix: Controlled
-
-- type: entity
-  parent: BaseDemon
   id: MediumDemonHamlet
   name: hellmet
   description: Bred as livestock in hell, they say Hellmets taste like chicken.
@@ -1014,6 +969,51 @@
   id: MajorDemonSteamerControlled
   suffix: Controlled
 
+- type: entity
+  parent: BaseDemon
+  id: MajorDemonGhost
+  name: Spectre # TODO: let him talk to deadchat
+  description: Ripped from their bodies, they seek to warm their hands on the flesh of the living.
+  components:
+  - type: Sprite
+    sprite: _Trauma/Mobs/Monsters/Demons/ghost.rsi
+  - type: MeleeWeapon
+    range: 1
+    soundHit:
+      path: /Audio/Effects/demon_attack1.ogg
+    damage:
+      types:
+        Cold: 13
+    altDisarm: false
+    canWideSwing: true
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 40
+      behaviors:
+      - !type:GibBehavior
+        recursive: false
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          BaseDemonSoulFragment:
+            min: 2
+            max: 4
+  - type: Fixtures
+    fixtures:
+      projectile:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.1,-0.2,0.1,0.2"
+        hard: false
+        mask:
+        - Opaque
+
+- type: entity
+  parent: [ ControlledDemon, MajorDemonGhost ]
+  id: MajorDemonGhostControlled
+  suffix: Controlled
+
 # Demon spawners
 
 - type: entity
@@ -1275,26 +1275,6 @@
 
 - type: entity
   parent: [ BaseDemonSummoningRuneHostile, BaseMediumSummoningRune ]
-  id: SummoningRuneGhost
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: GhostRoleMobSpawner
-    prototype: MediumDemonGhost
-  - type: SpawnOnDespawn
-    prototype: MediumDemonGhost
-
-- type: entity
-  parent: [ BaseDemonSummoningRuneFamiliar, BaseMediumSummoningRune ]
-  id: SummoningRuneGhostTame
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: GhostRoleMobSpawner
-    prototype: MediumDemonGhostControlled
-  - type: SpawnOnDespawn
-    prototype: MediumDemonGhostControlled
-
-- type: entity
-  parent: [ BaseDemonSummoningRuneHostile, BaseMediumSummoningRune ]
   id: SummoningRuneHamlet
   categories: [ HideSpawnMenu ]
   components:
@@ -1474,3 +1454,23 @@
     prototype: MajorDemonSteamerControlled
   - type: SpawnOnDespawn
     prototype: MajorDemonSteamerControlled
+
+- type: entity
+  parent: [ BaseDemonSummoningRuneHostile, BaseMajorSummoningRune ]
+  id: SummoningRuneGhost
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: GhostRoleMobSpawner
+    prototype: MajorDemonGhost
+  - type: SpawnOnDespawn
+    prototype: MajorDemonGhost
+
+- type: entity
+  parent: [ BaseDemonSummoningRuneFamiliar, BaseMajorSummoningRune ]
+  id: SummoningRuneGhostTame
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: GhostRoleMobSpawner
+    prototype: MajorDemonGhostControlled
+  - type: SpawnOnDespawn
+    prototype: MajorDemonGhostControlled

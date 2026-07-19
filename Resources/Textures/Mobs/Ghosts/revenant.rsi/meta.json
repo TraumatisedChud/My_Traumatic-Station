@@ -8,7 +8,7 @@
   },
   "states": [
     {
-      "name": "alive",
+      "name": "active",
       "directions": 4,
       "delays": [
         [

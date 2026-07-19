@@ -11730,3 +11730,10 @@ Entries:
   id: 1296
   time: '2026-07-19T18:31:27.0000000+00:00'
   url: https://github.com/Trauma-Station/Trauma-Station/pull/3570
+- author: Graves
+  changes:
+  - type: Tweak
+    message: Resprited some of wraith's summons!
+  id: 1297
+  time: '2026-07-19T20:21:15.0000000+00:00'
+  url: https://github.com/Trauma-Station/Trauma-Station/pull/3624

@@ -386,7 +386,7 @@
   parent: [ BaseDemon, InventoryBase ]
   id: MinorDemonVulp
   name: wrathful beast
-  description: The dominant species of a bygone era, now tortured in Hell for their hubris. 
+  description: The dominant species of a bygone era, now tortured in Hell for their hubris.
   components:
   - type: Sprite
     sprite: _Trauma/Mobs/Monsters/Demons/vulp.rsi
@@ -956,7 +956,7 @@
   parent: BaseDemon
   id: MajorDemonSteamer
   name: steamer
-  description: Keep the flames of Hell warm for especially wicked sinners. 
+  description: Keep the flames of Hell warm for especially wicked sinners.
   components:
   - type: Sprite
     sprite: _Trauma/Mobs/Monsters/Demons/steamer.rsi

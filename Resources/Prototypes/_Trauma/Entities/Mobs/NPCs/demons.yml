@@ -127,9 +127,10 @@
 - type: entity
   parent: BaseDemon
   id: MinorDemonGuy
-  name: strange man
-  description: A lower demon trying to imitate the visage of a man... very poorly.
+  name: Twisted Clown
+  description: What ends up happening when a clown pies one too many chaplains. Actions have consequences
   components:
+  - type: WaddleAnimation
   - type: Sprite
     sprite: _Trauma/Mobs/Monsters/Demons/guy.rsi
   - type: MeleeWeapon
@@ -911,7 +912,7 @@
   parent: BaseDemon
   id: MajorDemonSteamer
   name: steamer
-  description: Steamers are beings that feed off the suffering of sapient creatures, this agony manifests into red hot necter within the gut.
+  description: Steamers are demons that were born from the souls of those who died to welderbombing. Their anger manifests as blazing oil within their gut..
   components:
   - type: Sprite
     sprite: _Trauma/Mobs/Monsters/Demons/steamer.rsi

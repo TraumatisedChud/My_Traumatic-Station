@@ -433,6 +433,7 @@
   parent: BaseDemon
   id: MediumDemonCentifiend
   name: Centifiend
+  description: One of the most common demons in Hell, this oversized arthropod spreads pestilence with its bite.
   components:
   - type: Sprite
     sprite: _Trauma/Mobs/Monsters/Demons/centifiend.rsi
@@ -482,6 +483,7 @@
   parent: BaseDemon
   id: MediumDemonChad
   name: prideful demon
+  description: It takes great pride in its mustache. It used to take pride in its skin…
   components:
   - type: Sprite
     sprite: _Trauma/Mobs/Monsters/Demons/chad.rsi
@@ -748,14 +750,14 @@
       path: /Audio/Effects/demon_attack1.ogg
     damage:
       types:
-        Blunt: 2
+        Blunt: 5
     altDisarm: true
     canWideSwing: false
   - type: Destructible
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 1000
+        damage: 1250
       behaviors:
       - !type:GibBehavior
         recursive: false

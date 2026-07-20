@@ -396,7 +396,7 @@
       path: /Audio/Effects/demon_attack1.ogg
     damage:
       types:
-        slash: 5
+        Slash: 5
     altDisarm: true
     canWideSwing: false
   - type: Destructible
@@ -474,15 +474,11 @@
     solution: melee
   - type: Fixtures
     fixtures:
-      fix1:
-        shape:
-          !type:PhysShapeCircle
-          radius: 0.2
-        density: 10 # Goob eedit
         mask:
         - SmallMobMask
         layer:
         - SmallMobLayer
+
 - type: entity
   parent: [ ControlledDemon, MinorDemonCentifiend ]
   id: MinorDemonCentifiendControlled
@@ -1037,7 +1033,7 @@
   description: Ripped from their bodies, they seek to warm their hands on the flesh of the living.
   components:
   - type: Sprite
-    sprite: _Trauma/Mobs/Monsters/Demons/ghost.rsi
+    sprite: resources/textures/mobs/ghosts/ghost.rsi
   - type: MeleeWeapon
     range: 1
     soundHit:
@@ -1074,65 +1070,6 @@
   parent: [ ControlledDemon, MajorDemonGhost ]
   id: MajorDemonGhostControlled
   suffix: Controlled
-
-# Demon spawners
-
-- type: entity
-  abstract: true
-  id: BaseDemonSummoningRuneHostile
-  name: summoning circle
-  description: A demon could be here any second...
-  placement:
-    mode: SnapgridCenter
-  components:
-  - type: Animateable
-  - type: Clickable
-  - type: InteractionOutline
-  - type: Damageable
-  - type: Injurable
-    damageContainer: Inorganic
-  - type: Transform
-    anchored: true
-  - type: GhostRole
-    name: ghost-role-information-demon-name
-    description: ghost-role-information-demon-desc
-    rules: ghost-role-information-antagonist-rules
-    mindRoles:
-    - MindRoleGhostRoleSoloAntagonist
-    raffle:
-      settings: short
-  - type: TimedDespawn
-    lifetime: 60
-
-- type: entity
-  abstract: true
-  parent: BaseDemonSummoningRuneHostile
-  id: BaseDemonSummoningRuneFamiliar
-  components:
-  - type: GhostRole
-    name: ghost-role-information-demon-tame-name
-    description: ghost-role-information-demon-tame-desc
-    rules: ghost-role-information-familiar-rules
-    mindRoles:
-    - MindRoleGhostRoleFamiliar
-
-- type: entity
-  id: BaseMinorSummoningRune
-  components:
-  - type: Sprite
-    sprite: _Trauma/Structures/Runes/minor.rsi
-    state: icon
-  - type: Destructible
-    thresholds:
-    - trigger:
-        !type:DamageTrigger
-        damage: 30
-      behaviors:
-      - !type:DoActsBehavior
-        acts: ["Destruction"]
-      - !type:PlaySoundBehavior
-        sound:
-          path: /Audio/_Goobstation/Heretic/runebreak.ogg
 
 # Demon spawners
 

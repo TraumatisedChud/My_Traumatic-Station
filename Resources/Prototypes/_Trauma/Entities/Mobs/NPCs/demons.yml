@@ -1293,7 +1293,7 @@
   - type: SpawnOnDespawn
     prototype: MinorDemonVulpControlled
 
-  - type: entity
+- type: entity
   parent: [ BaseDemonSummoningRuneHostile, BaseMinorSummoningRune ]
   id: SummoningRuneLesserCentifiend
   categories: [ HideSpawnMenu ]

@@ -1038,7 +1038,7 @@
   description: Ripped from their bodies, they seek to warm their hands on the flesh of the living.
   components:
   - type: Sprite
-    Sprite: mobs/ghosts/revenant.rsi
+    Sprite: Mobs/Ghosts/revenant.rsi
   - type: MeleeWeapon
     range: 1
     soundHit:

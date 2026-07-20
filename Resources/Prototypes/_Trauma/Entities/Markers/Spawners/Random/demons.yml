@@ -73,7 +73,6 @@
     table: !type:GroupSelector
       children:
       - id: SummoningRuneChad
-      - id: SummoningRuneGhost
       - id: SummoningRuneHamlet
       - id: SummoningRuneDemon64Fat
       - id: SummoningRuneDemon64Buff

@@ -30,6 +30,7 @@
       - id: SummoningRuneIan
       - id: SummoningRuneVox
       - id: SummoningRuneVulp
+      - id: SummoningRuneLesserCentifiend
 
 - type: entity
   parent: MarkerBase
@@ -45,6 +46,7 @@
       - id: SummoningRuneIanTame
       - id: SummoningRuneVoxTame
       - id: SummoningRuneVulpTame
+      - id: SummoningRuneLesserCentifiendTame
 
 # Medium
 
@@ -87,7 +89,6 @@
     table: !type:GroupSelector
       children:
       - id: SummoningRuneChadTame
-      - id: SummoningRuneGhostTame
       - id: SummoningRuneHamletTame
       - id: SummoningRuneDemon64FatTame
       - id: SummoningRuneDemon64BuffTame
@@ -123,6 +124,7 @@
       - id: SummoningRuneHanged
       - id: SummoningRuneHiver
       - id: SummoningRuneSteamer
+      - id: SummoningRuneSpectre
 
 - type: entity
   parent: MarkerBase
@@ -137,6 +139,7 @@
       - id: SummoningRuneHangedTame
       - id: SummoningRuneHiverTame
       - id: SummoningRuneSteamerTame
+      - id: SummoningRuneSpectreTame
 
 # Ink
 

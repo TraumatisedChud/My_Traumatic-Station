@@ -427,6 +427,67 @@
   id: MinorDemonVulpControlled
   suffix: Controlled
 
+- type: entity
+  parent: BaseDemon
+  id: MinorDemonCentifiend
+  name: Lesser Centifiend
+  description: One of the most common demons in Hell, this oversized arthropod spreads pestilence with its bite.
+  components:
+  - type: Sprite
+    sprite: _Trauma/Mobs/Monsters/Demons/smolcentifiend.rsi
+  - type: MeleeWeapon
+    range: 1
+    soundHit:
+      path: /Audio/Effects/demon_attack1.ogg
+    animation: WeaponArcBite
+    damage:
+      types:
+        Piercing: 1
+    altDisarm: true
+    canWideSwing: false
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 35
+      behaviors:
+      - !type:GibBehavior
+        recursive: false
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          BaseDemonSoulFragment:
+            min: 0
+            max: 2
+  - type: Solution
+    id: melee
+    solution:
+      maxVol: 10
+  - type: SolutionRegeneration
+    generated:
+      reagents:
+      - ReagentId: UnstableCompound
+        Quantity: 1
+      - ReagentId: Mold
+        Quantity: 2
+  - type: MeleeChemicalInjector
+    transferAmount: 3
+    solution: melee
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.2
+        density: 10 # Goob eedit
+        mask:
+        - SmallMobMask
+        layer:
+        - SmallMobLayer
+- type: entity
+  parent: [ ControlledDemon, MinorDemonCentifiend ]
+  id: MinorDemonCentifiendControlled
+  suffix: Controlled
+
 # Medium
 
 - type: entity
@@ -1078,7 +1139,7 @@
   id: BaseMediumSummoningRune
   components:
   - type: Sprite
-    sprite: Mobs/Ghosts/revenant.rsi
+    sprite: Resources/Textures/Mobs/Ghosts/revenant.rsi
   - type: MeleeWeapon
     range: 1
     soundHit:
@@ -1333,6 +1394,26 @@
     prototype: MinorDemonVulpControlled
   - type: SpawnOnDespawn
     prototype: MinorDemonVulpControlled
+
+ - type: entity
+  parent: [ BaseDemonSummoningRuneHostile, BaseMinorSummoningRune ]
+  id: SummoningRuneLesserCentifiend
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: GhostRoleMobSpawner
+    prototype: MinorDemonCentifiend
+  - type: SpawnOnDespawn
+    prototype: MinorDemonCentifiend
+
+- type: entity
+  parent: [ BaseDemonSummoningRuneFamiliar, BaseMinorSummoningRune ]
+  id: SummoningRuneLesserCentifiendTame
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: GhostRoleMobSpawner
+    prototype: MinorDemonCentifiend
+  - type: SpawnOnDespawn
+    prototype: MinorDemonCentifiend   
 
 # Medium
 

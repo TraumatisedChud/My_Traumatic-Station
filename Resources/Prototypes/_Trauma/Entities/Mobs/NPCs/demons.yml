@@ -478,7 +478,11 @@
         shape:
           !type:PhysShapeCircle
           radius: 0.2
-        density: 10 # Goob eedit :gem:
+        density: 10 
+        mask:
+        - SmallMobMask
+        layer:
+        - SmallMobLayer
 
 - type: entity
   parent: [ ControlledDemon, MinorDemonCentifiend ]

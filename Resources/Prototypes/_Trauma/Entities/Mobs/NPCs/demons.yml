@@ -386,7 +386,7 @@
   parent: [ BaseDemon, InventoryBase ]
   id: MinorDemonVulp
   name: wrathful beast
-  description: The dominant species of a bygone era, now tortured in Hell for their hubris. 
+  description: The dominant species of a bygone era, now tortured in Hell for their hubris.
   components:
   - type: Sprite
     sprite: _Trauma/Mobs/Monsters/Demons/vulp.rsi
@@ -756,7 +756,7 @@
   parent: BaseDemon
   id: MajorDemonBosche
   name: bosche
-  description: Born from the dreams of a mad painter, all it knows is to consume. 
+  description: Born from the dreams of a mad painter, all it knows is to consume.
   components:
   - type: Sprite
     sprite: _Trauma/Mobs/Monsters/Demons/bosche.rsi
@@ -809,7 +809,7 @@
   parent: BaseDemon
   id: MajorDemonFeverbird
   name: feverbird
-  description: Your head hurts. Something is wrong. Infinity is not a toy. 
+  description: Your head hurts. Something is wrong. Infinity is not a toy.
   components:
   - type: Sprite
     sprite: _Trauma/Mobs/Monsters/Demons/feverbird.rsi
@@ -1033,7 +1033,7 @@
 - type: entity
   parent: BaseDemon
   id: MajorDemonGhost
-  name: Spectre 
+  name: Spectre
   description: Ripped from their bodies, they seek to warm their hands on the flesh of the living.
   components:
   - type: Sprite
@@ -1369,7 +1369,7 @@
   - type: GhostRoleMobSpawner
     prototype: MinorDemonCentifiend
   - type: SpawnOnDespawn
-    prototype: MinorDemonCentifiend   
+    prototype: MinorDemonCentifiend
 
 # Medium
 
@@ -1614,4 +1614,3 @@
     prototype: MajorDemonGhostControlled
   - type: SpawnOnDespawn
     prototype: MajorDemonGhostControlled
-

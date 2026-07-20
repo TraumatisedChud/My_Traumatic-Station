@@ -128,7 +128,7 @@
   parent: BaseDemon
   id: MinorDemonGuy
   name: twisted clown
-  description: What happens when a clown pies one too many chaplains. actions have consequences.
+  description: What happens when a clown pies one too many chaplains. Actions have consequences.
   components:
   - type: Sprite
     sprite: _Trauma/Mobs/Monsters/Demons/guy.rsi
@@ -922,7 +922,7 @@
   parent: BaseDemon
   id: MajorDemonHiver
   name: hiver
-  description: Weaker demons that formed a symbiotic relationship with infernal bees. yes Hell has bees, lots of them.
+  description: Weaker demons that formed a symbiotic relationship with infernal bees. Yes Hell has bees, lots of them.
   components:
   - type: Sprite
     sprite: _Trauma/Mobs/Monsters/Demons/hiver.rsi
@@ -1292,7 +1292,7 @@
     prototype: MinorDemonVulpControlled
   - type: SpawnOnDespawn
     prototype: MinorDemonVulpControlled
-    
+
   - type: entity
   parent: [ BaseDemonSummoningRuneHostile, BaseMinorSummoningRune ]
   id: SummoningRuneLesserCentifiend

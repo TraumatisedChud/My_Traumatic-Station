@@ -474,10 +474,11 @@
     solution: melee
   - type: Fixtures
     fixtures:
-        mask:
-        - SmallMobMask
-        layer:
-        - SmallMobLayer
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.2
+        density: 10 # Goob eedit :gem:
 
 - type: entity
   parent: [ ControlledDemon, MinorDemonCentifiend ]

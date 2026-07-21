@@ -431,7 +431,7 @@
   parent: BaseDemon
   id: MinorDemonCentifiend
   name: lesser centifiend
-  description: One of the most common demons in Hell, this oversized arthropod spreads pestilence with its bite.
+  description: A juvenile demon, this demon progresses the potent diseases of its greater brethren.
   components:
   - type: Sprite
     sprite: _Trauma/Mobs/Monsters/Demons/smolcentifiend.rsi
@@ -449,7 +449,7 @@
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 35
+        damage: 30
       behaviors:
       - !type:GibBehavior
         recursive: false
@@ -458,6 +458,19 @@
           BaseDemonSoulFragment:
             min: 0
             max: 2
+            - type: VentCrawler
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.2
+        density: 12
+        mask:
+        - SmallMobMask
+        layer:
+        - SmallMobLayer
+    slipChance: 0.3
   - type: Solution
     id: melee
     solution:
@@ -467,10 +480,8 @@
       reagents:
       - ReagentId: UnstableCompound
         Quantity: 1
-      - ReagentId: Mold
-        Quantity: 2
   - type: MeleeChemicalInjector
-    transferAmount: 3
+    transferAmount: 1
     solution: melee
 
 - type: entity
@@ -492,6 +503,7 @@
     range: 1
     soundHit:
       path: /Audio/Effects/demon_attack1.ogg
+      animation: WeaponArcBite
     damage:
       types:
         Piercing: 1
@@ -1018,51 +1030,6 @@
 - type: entity
   parent: [ ControlledDemon, MajorDemonSteamer ]
   id: MajorDemonSteamerControlled
-  suffix: Controlled
-
-- type: entity
-  parent: BaseDemon
-  id: MajorDemonGhost
-  name: spectre
-  description: Ripped from their bodies, they seek to warm their hands on the flesh of the living.
-  components:
-  - type: Sprite
-    Sprite: Mobs/Ghosts/revenant.rsi
-  - type: MeleeWeapon
-    range: 1
-    soundHit:
-      path: /Audio/Effects/demon_attack1.ogg
-    damage:
-      types:
-        Cold: 13
-    altDisarm: false
-    canWideSwing: true
-  - type: Destructible
-    thresholds:
-    - trigger:
-        !type:DamageTrigger
-        damage: 40
-      behaviors:
-      - !type:GibBehavior
-        recursive: false
-      - !type:SpawnEntitiesBehavior
-        spawn:
-          BaseDemonSoulFragment:
-            min: 3
-            max: 4
-  - type: Fixtures
-    fixtures:
-      projectile:
-        shape:
-          !type:PhysShapeAabb
-          bounds: "-0.1,-0.2,0.1,0.2"
-        hard: false
-        mask:
-        - Opaque
-
-- type: entity
-  parent: [ ControlledDemon, MajorDemonGhost ]
-  id: MajorDemonGhostControlled
   suffix: Controlled
 
 # Demon spawners

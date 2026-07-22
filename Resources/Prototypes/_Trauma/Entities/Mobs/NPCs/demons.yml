@@ -109,19 +109,6 @@
     radius: 0
     energy: 0
 
-- type: entity
-  id: ControlledDemon
-  abstract: true
-  components:
-  - type: GhostRole
-    name: ghost-role-information-demon-tame-name
-    description: ghost-role-information-demon-tame-desc
-    rules: ghost-role-information-familiar-rules
-    mindRoles:
-    - MindRoleGhostRoleFamiliar
-    raffle:
-      settings: short
-
 # Minor Demons
 
 - type: entity
@@ -151,14 +138,9 @@
         recursive: false
       - !type:SpawnEntitiesBehavior
         spawn:
-          BaseDemonSoulFragment:
+          DemonSoulFragment:
             min: 0
             max: 1
-
-- type: entity
-  parent: [ ControlledDemon, MinorDemonGuy ]
-  id: MinorDemonGuyControlled
-  suffix: Controlled
 
 - type: entity
   parent: BaseDemon
@@ -187,14 +169,9 @@
         recursive: false
       - !type:SpawnEntitiesBehavior
         spawn:
-          BaseDemonSoulFragment:
+          DemonSoulFragment:
             min: 0
             max: 1
-
-- type: entity
-  parent: [ ControlledDemon, MinorDemonIncel ]
-  id: MinorDemonIncelControlled
-  suffix: Controlled
 
 - type: entity
   parent: [ BaseDemon, InventoryBase ]
@@ -223,7 +200,7 @@
         recursive: false
       - !type:SpawnEntitiesBehavior
         spawn:
-          BaseDemonSoulFragment:
+          DemonSoulFragment:
             min: 0
             max: 1
   - type: Crawler
@@ -235,11 +212,6 @@
       Hand:
         location: Left
   - type: ComplexInteraction
-
-- type: entity
-  parent: [ ControlledDemon, MinorDemonUrist ]
-  id: MinorDemonUristControlled
-  suffix: Controlled
 
 - type: entity
   parent: BaseDemon
@@ -270,7 +242,7 @@
         recursive: false
       - !type:SpawnEntitiesBehavior
         spawn:
-          BaseDemonSoulFragment:
+          DemonSoulFragment:
             min: 0
             max: 1
           MaterialHideCorgi:
@@ -279,11 +251,6 @@
   - type: MovementSpeedModifier
     baseWalkSpeed: 7.5
     baseSprintSpeed: 1.5
-
-- type: entity
-  parent: [ ControlledDemon, MinorDemonIan ]
-  id: MinorDemonIanControlled
-  suffix: Controlled
 
 - type: entity
   parent: [ BaseDemon, InventoryBase ]
@@ -312,7 +279,7 @@
         recursive: false
       - !type:SpawnEntitiesBehavior
         spawn:
-          BaseDemonSoulFragment:
+          DemonSoulFragment:
             min: 0
             max: 1
   - type: Crawler
@@ -378,11 +345,6 @@
   - type: ComplexInteraction
 
 - type: entity
-  parent: [ ControlledDemon, MinorDemonVox ]
-  id: MinorDemonVoxControlled
-  suffix: Controlled
-
-- type: entity
   parent: [ BaseDemon, InventoryBase ]
   id: MinorDemonVulp
   name: wrathful beast
@@ -409,7 +371,7 @@
         recursive: false
       - !type:SpawnEntitiesBehavior
         spawn:
-          BaseDemonSoulFragment:
+          DemonSoulFragment:
             min: 0
             max: 1
   - type: Crawler
@@ -519,7 +481,7 @@
         recursive: false
       - !type:SpawnEntitiesBehavior
         spawn:
-          BaseDemonSoulFragment:
+          DemonSoulFragment:
             min: 1
             max: 3
   - type: Solution
@@ -536,11 +498,6 @@
   - type: MeleeChemicalInjector
     transferAmount: 8
     solution: melee
-
-- type: entity
-  parent: [ ControlledDemon, MediumDemonCentifiend ]
-  id: MediumDemonCentifiendControlled
-  suffix: Controlled
 
 - type: entity
   parent: BaseDemon
@@ -570,14 +527,9 @@
         recursive: false
       - !type:SpawnEntitiesBehavior
         spawn:
-          BaseDemonSoulFragment:
+          DemonSoulFragment:
             min: 1
             max: 3
-
-- type: entity
-  parent: [ ControlledDemon, MediumDemonChad ]
-  id: MediumDemonChadControlled
-  suffix: Controlled
 
 - type: entity
   parent: BaseDemon
@@ -607,7 +559,7 @@
         recursive: false
       - !type:SpawnEntitiesBehavior
         spawn:
-          BaseDemonSoulFragment:
+          DemonSoulFragment:
             min: 1
             max: 2
   - type: MovementSpeedModifier
@@ -629,11 +581,6 @@
     insertingState: inserting_hamster
   - type: FaxSlip
     slipChance: 0.3
-
-- type: entity
-  parent: [ ControlledDemon, MediumDemonHamlet ]
-  id: MediumDemonHamletControlled
-  suffix: Controlled
 
 # Major demons
 
@@ -664,17 +611,12 @@
         recursive: false
       - !type:SpawnEntitiesBehavior
         spawn:
-          BaseDemonSoulFragment:
+          DemonSoulFragment:
             min: 1
             max: 3
   - type: ActionGrant
     actions:
       - ActionDemonRift
-
-- type: entity
-  parent: [ ControlledDemon, MediumDemon64Fat ]
-  id: MediumDemon64FatControlled
-  suffix: Controlled
 
 - type: entity
   parent: BaseDemon
@@ -703,17 +645,12 @@
         recursive: false
       - !type:SpawnEntitiesBehavior
         spawn:
-          BaseDemonSoulFragment:
+          DemonSoulFragment:
             min: 1
             max: 3
   - type: ActionGrant
     actions:
       - ActionDemonRift
-
-- type: entity
-  parent: [ ControlledDemon, MediumDemon64Buff ]
-  id: MediumDemon64BuffControlled
-  suffix: Controlled
 
 - type: entity
   parent: BaseDemon
@@ -742,17 +679,12 @@
         recursive: false
       - !type:SpawnEntitiesBehavior
         spawn:
-          BaseDemonSoulFragment:
+          DemonSoulFragment:
             min: 1
             max: 3
   - type: ActionGrant
     actions:
     - ActionDemonRift
-
-- type: entity
-  parent: [ ControlledDemon, MediumDemon64 ]
-  id: MediumDemon64Controlled
-  suffix: Controlled
 
 - type: entity
   parent: BaseDemon
@@ -781,7 +713,7 @@
         recursive: false
       - !type:SpawnEntitiesBehavior
         spawn:
-          BaseDemonSoulFragment:
+          DemonSoulFragment:
             min: 3
             max: 5
   - type: Devourer
@@ -801,11 +733,6 @@
       - Item
       tags:
       - Wall
-
-- type: entity
-  parent: [ ControlledDemon, MajorDemonBosche ]
-  id: MajorDemonBoscheControlled
-  suffix: Controlled
 
 - type: entity
   parent: BaseDemon
@@ -838,7 +765,7 @@
         recursive: false
       - !type:SpawnEntitiesBehavior
         spawn:
-          BaseDemonSoulFragment:
+          DemonSoulFragment:
             min: 3
             max: 5
   - type: MovementIgnoreGravity
@@ -860,11 +787,6 @@
   - type: MeleeChemicalInjector
     transferAmount: 17
     solution: melee
-
-- type: entity
-  parent: [ ControlledDemon, MajorDemonFeverbird ]
-  id: MajorDemonFeverbirdControlled
-  suffix: Controlled
 
 - type: entity
   parent: BaseDemon
@@ -893,7 +815,7 @@
         recursive: false
       - !type:SpawnEntitiesBehavior
         spawn:
-          BaseDemonSoulFragment:
+          DemonSoulFragment:
             min: 3
             max: 5
   - type: Hands
@@ -913,11 +835,6 @@
     chokeGrabSpeedModifier: 1
     suffocateGrabStaminaDamage: 1000
     grabThrowDamageModifier: 4
-
-- type: entity
-  parent: [ ControlledDemon, MajorDemonHanged ]
-  id: MajorDemonHangedControlled
-  suffix: Controlled
 
 - type: entity
   parent: BaseDemon
@@ -946,7 +863,7 @@
         recursive: false
       - !type:SpawnEntitiesBehavior
         spawn:
-          BaseDemonSoulFragment:
+          DemonSoulFragment:
             min: 3
             max: 5
   - type: TimedSpawner
@@ -955,11 +872,6 @@
     intervalSeconds: 3
     minimumEntitiesSpawned: 5
     maximumEntitiesSpawned: 10
-
-- type: entity
-  parent: [ ControlledDemon, MajorDemonHiver ]
-  id: MajorDemonHiverControlled
-  suffix: Controlled
 
 - type: entity
   parent: BeeLaughter
@@ -997,7 +909,7 @@
         recursive: false
       - !type:SpawnEntitiesBehavior
         spawn:
-          BaseDemonSoulFragment:
+          DemonSoulFragment:
             min: 3
             max: 5
   - type: GunRequiresWield

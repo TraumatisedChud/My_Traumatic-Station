@@ -378,6 +378,48 @@
         location: Left
   - type: ComplexInteraction
 
+  - type: entity
+  parent: BaseDemon
+  id: MinorDemonCentifiend
+  name: lesser centifiend
+  components:
+  - type: Sprite
+    sprite: _Trauma/Mobs/Monsters/Demons/smolcentifiend.rsi
+  - type: MeleeWeapon
+    range: 1
+    soundHit:
+      path: /Audio/Effects/demon_attack1.ogg
+    damage:
+      types:
+        Piercing: 1
+    altDisarm: true
+    canWideSwing: false
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 30
+      behaviors:
+      - !type:GibBehavior
+        recursive: false
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          DemonSoulFragment:
+            min: 0
+            max: 2
+  - type: Solution
+    id: melee
+    solution:
+      maxVol: 10
+  - type: SolutionRegeneration
+    generated:
+      reagents:
+      - ReagentId: UnstableCompound
+        Quantity: 1
+  - type: MeleeChemicalInjector
+    transferAmount: 1
+    solution: melee
+
 # Medium
 
 - type: entity

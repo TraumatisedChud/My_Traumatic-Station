@@ -11796,3 +11796,10 @@ Entries:
   id: 1304
   time: '2026-07-22T21:28:03.0000000+00:00'
   url: https://github.com/Trauma-Station/Trauma-Station/pull/3669
+- author: deltanedas
+  changes:
+  - type: Fix
+    message: Fixed monkeys/kobolds jumpsuits using human-sized sprites.
+  id: 1305
+  time: '2026-07-22T22:18:59.0000000+00:00'
+  url: https://github.com/Trauma-Station/Trauma-Station/pull/3671

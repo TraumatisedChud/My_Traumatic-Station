@@ -11789,3 +11789,10 @@ Entries:
   id: 1303
   time: '2026-07-22T16:45:11.0000000+00:00'
   url: https://github.com/Trauma-Station/Trauma-Station/pull/3661
+- author: deltanedas
+  changes:
+  - type: Fix
+    message: Fixed spray painted clothes looking weird on dwarves.
+  id: 1304
+  time: '2026-07-22T21:28:03.0000000+00:00'
+  url: https://github.com/Trauma-Station/Trauma-Station/pull/3669

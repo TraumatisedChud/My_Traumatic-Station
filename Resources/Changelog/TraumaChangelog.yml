@@ -11835,3 +11835,10 @@ Entries:
   id: 1309
   time: '2026-07-23T00:44:58.0000000+00:00'
   url: https://github.com/Trauma-Station/Trauma-Station/pull/3678
+- author: deltanedas
+  changes:
+  - type: Remove
+    message: Removed strength training with melee weapons.
+  id: 1310
+  time: '2026-07-23T01:06:37.0000000+00:00'
+  url: https://github.com/Trauma-Station/Trauma-Station/pull/3680

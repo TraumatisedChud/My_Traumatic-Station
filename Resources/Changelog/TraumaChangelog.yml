@@ -11874,3 +11874,10 @@ Entries:
   id: 1312
   time: '2026-07-23T19:06:55.0000000+00:00'
   url: https://github.com/Trauma-Station/Trauma-Station/pull/3685
+- author: deltanedas
+  changes:
+  - type: Tweak
+    message: Radiation storms now cause negative mutations but do less damage.
+  id: 1313
+  time: '2026-07-23T19:50:27.0000000+00:00'
+  url: https://github.com/Trauma-Station/Trauma-Station/pull/3656

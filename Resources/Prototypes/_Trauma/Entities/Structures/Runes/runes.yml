@@ -128,7 +128,6 @@
     - MinorDemonIan
     - MinorDemonVox
     - MinorDemonVulp
-    - MinorDemonCentifiend
 
 - type: entity
   parent: BaseCarvedRune
@@ -161,12 +160,10 @@
   - type: RandomDemonSpawner
     demons:
     - MediumDemonChad
-    - MediumDemonGhost
     - MediumDemonHamlet
     - MediumDemon64Fat
     - MediumDemon64Buff
     - MediumDemon64
-    - MediumDemonCentifiend
 
 - type: entity
   parent: BaseCarvedRune
@@ -198,6 +195,7 @@
     graph: MajorSummoning
   - type: RandomDemonSpawner
     demons:
+    - MajorDemonGhost
     - MajorDemonBosche
     - MajorDemonFeverbird
     - MajorDemonHanged

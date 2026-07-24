@@ -130,7 +130,7 @@
         - SmallMobLayer
   - type: WaddleAnimation
   - type: Speech
-    speechSounds: CluwneHorn
+    speechSounds: BikeHorn
   - type: Sprite
     sprite: _Trauma/Mobs/Monsters/Demons/guy.rsi
   - type: MeleeWeapon
@@ -140,8 +140,6 @@
     damage:
       types:
         Slash: 5
-      soundHit:
-      collection: BikeHorn
     animation: WeaponArcFist
     altDisarm: false
     canWideSwing: true
@@ -793,7 +791,7 @@
   parent: BaseDemon
   id: MajorDemonHanged
   name: hanged
-  descripton: After being sent to the gallows, the souls of criminals enter the flora of Hell, they are back to exact revenge.
+  description: After being sent to the gallows, the souls of criminals enter the flora of Hell, they are back to exact revenge.
   components:
   - type: Sprite
     sprite: _Trauma/Mobs/Monsters/Demons/hanger.rsi

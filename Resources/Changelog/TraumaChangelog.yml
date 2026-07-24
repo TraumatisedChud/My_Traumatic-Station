@@ -11962,3 +11962,28 @@ Entries:
   id: 1314
   time: '2026-07-24T01:47:38.0000000+00:00'
   url: https://github.com/Trauma-Station/Trauma-Station/pull/3683
+- author: Armok
+  changes:
+  - type: Add
+    message: Traitor token to token store.
+  - type: Remove
+    message: antag, hat, and abuse tokens from store.
+  - type: Tweak
+    message: All bombs can only be purchased 5 minutes into the round as of now.
+  - type: Tweak
+    message: >-
+      Retrieval gloves, combat gloves, jackboots, and combat boots all protect
+      from explosives.
+  - type: Tweak
+    message: Reduce traitor token cost to 100 EC
+  - type: Tweak
+    message: Death nettle base damage 16 > 1, it is now more reliant on chems
+  - type: Tweak
+    message: Add fancy death nettle durability.
+  - type: Tweak
+    message: Death nettle and gatfruit storage shapes changed
+  - type: Tweak
+    message: Reinforcement cadets can be taken by anyone
+  id: 1315
+  time: '2026-07-24T02:11:36.0000000+00:00'
+  url: https://github.com/Trauma-Station/Trauma-Station/pull/3689

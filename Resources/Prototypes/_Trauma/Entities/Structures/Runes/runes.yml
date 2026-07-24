@@ -164,6 +164,7 @@
     - MediumDemon64Fat
     - MediumDemon64Buff
     - MediumDemon64
+    - MediumDemonCentifiend
 
 - type: entity
   parent: BaseCarvedRune

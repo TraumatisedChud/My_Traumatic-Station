@@ -116,6 +116,20 @@
   id: MinorDemonGuy
   name: twisted clown
   components:
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.2
+        density: 100
+        mask:
+        - SmallMobMask
+        layer:
+        - SmallMobLayer
+  - type: WaddleAnimation
+  - type: Speech
+    speechSounds: BikeHorn
   - type: Sprite
     sprite: _Trauma/Mobs/Monsters/Demons/guy.rsi
   - type: MeleeWeapon
@@ -125,6 +139,9 @@
     damage:
       types:
         Slash: 10
+      soundHit:
+      collection: BikeHorn
+    animation: WeaponArcFist
     altDisarm: false
     canWideSwing: true
   - type: Destructible
@@ -140,6 +157,18 @@
           DemonSoulFragment:
             min: 0
             max: 1
+    - type: Solution
+    id: melee
+    solution:
+      maxVol: 10
+  - type: SolutionRegeneration
+    generated:
+      reagents:
+      - ReagentId: Honk
+        Quantity: 3
+  - type: MeleeChemicalInjector
+    transferAmount: 3
+    solution: melee
 
 - type: entity
   parent: BaseDemon

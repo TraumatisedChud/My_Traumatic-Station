@@ -691,7 +691,7 @@
   parent: BaseDemon
   id: MajorDemonBosche
   name: bosche
-  description: Born from the dreams of a mad painter, all it knows is to consume. 
+  description: Born from the dreams of a mad painter, all it knows is to consume.
   components:
   - type: Sprite
     sprite: _Trauma/Mobs/Monsters/Demons/bosche.rsi

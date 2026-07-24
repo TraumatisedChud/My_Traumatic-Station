@@ -115,6 +115,7 @@
   parent: BaseDemon
   id: MinorDemonGuy
   name: twisted clown
+  description: What happens when a clown pies one too many chaplains. Actions have consequences.
   components:
   - type: Fixtures
     fixtures:
@@ -129,7 +130,7 @@
         - SmallMobLayer
   - type: WaddleAnimation
   - type: Speech
-    speechSounds: BikeHorn
+    speechSounds: CluwneHorn
   - type: Sprite
     sprite: _Trauma/Mobs/Monsters/Demons/guy.rsi
   - type: MeleeWeapon
@@ -160,7 +161,7 @@
     - type: Solution
     id: melee
     solution:
-      maxVol: 10
+      maxVol: 5
   - type: SolutionRegeneration
     generated:
       reagents:
@@ -174,6 +175,7 @@
   parent: BaseDemon
   id: MinorDemonIncel
   name: jealousy incarnate
+  description: A hellish creature that dwells in the second layer of hell, tiringly talkative.
   components:
   - type: Sprite
     sprite: _Trauma/Mobs/Monsters/Demons/incel.rsi
@@ -203,7 +205,8 @@
 - type: entity
   parent: [ BaseDemon, InventoryBase ]
   id: MinorDemonUrist
-  name: Urist McHands
+  name: sinner
+  description: A wicked human sent to suffer in hell forever.
   components:
   - type: Sprite
     sprite: _Trauma/Mobs/Monsters/Demons/human.rsi
@@ -242,7 +245,8 @@
 - type: entity
   parent: BaseDemon
   id: MinorDemonIan
-  name: Flesh Hound
+  name: flesh hound
+  description: After enough time in hell, souls begin to assume a more… primal form.
   components:
   - type: Sprite
     sprite: _Trauma/Mobs/Monsters/Demons/ian.rsi
@@ -281,6 +285,7 @@
   parent: [ BaseDemon, InventoryBase ]
   id: MinorDemonVox
   name: outcast
+  description: Hated by even the most repulsive demons, it wanders the planes of Hell alone.
   components:
   - type: Sprite
     sprite: _Trauma/Mobs/Monsters/Demons/vox.rsi
@@ -372,6 +377,7 @@
   parent: [ BaseDemon, InventoryBase ]
   id: MinorDemonVulp
   name: wrathful beast
+  description: The dominant species of a bygone era, now tortured in Hell for their hubris.
   components:
   - type: Sprite
     sprite: _Trauma/Mobs/Monsters/Demons/vulp.rsi
@@ -413,6 +419,7 @@
   parent: BaseDemon
   id: MediumDemonCentifiend
   name: Centifiend
+  description: One of the most common demons in Hell, this oversized arthropod spreads pestilence with its bite.
   components:
   - type: Sprite
     sprite: _Trauma/Mobs/Monsters/Demons/centifiend.rsi
@@ -457,6 +464,7 @@
   parent: BaseDemon
   id: MediumDemonChad
   name: prideful demon
+  description: It takes great pride in its mustache. It used to take pride in its skin…
   components:
   - type: Sprite
     sprite: _Trauma/Mobs/Monsters/Demons/chad.rsi
@@ -486,25 +494,26 @@
 
 - type: entity
   parent: BaseDemon
-  id: MediumDemonGhost
-  name: Pun Pun # TODO: let him talk to deadchat
+  id: MajorDemonGhost
+  name: Spectre
+  description: Torn from their bodies, they seek to warm their hands on the warm flesh of the living.
   components:
   - type: Sprite
     sprite: Mobs/Ghosts/revenant.rsi
   - type: MeleeWeapon
-    range: 1
+    range: 2
     soundHit:
       path: /Audio/Effects/demon_attack1.ogg
     damage:
       types:
-        Cold: 10
+        Cold: 13
     altDisarm: false
     canWideSwing: true
   - type: Destructible
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 25
+        damage: 40
       behaviors:
       - !type:GibBehavior
         recursive: false
@@ -527,6 +536,7 @@
   parent: BaseDemon
   id: MediumDemonHamlet
   name: hellmet
+  description: Bred as livestock in hell, rumors say Hellmets taste like chicken.
   components:
   - type: Sprite
     sprite: _Trauma/Mobs/Monsters/Demons/hamlet.rsi
@@ -579,6 +589,7 @@
   parent: BaseDemon
   id: MediumDemon64Fat
   name: angel
+  description: After consuming a great number of Hellish souls, it's possible a lowly Sinner may become an Angel. Unfortunately, they are still stuck in Hell. This one is a bit on the fat side.
   components:
   - type: Sprite
     sprite: _Trauma/Mobs/Monsters/Demons/fat.rsi
@@ -612,6 +623,7 @@
   parent: BaseDemon
   id: MediumDemon64Buff
   name: angel
+  description: After consuming a great number of Hellish souls, it's possible a lowly Sinner may become an Angel. Unfortunately, they are still stuck in Hell. This one seems stronger.
   components:
   - type: Sprite
     sprite: _Trauma/Mobs/Monsters/Demons/buff.rsi
@@ -621,7 +633,7 @@
       path: /Audio/Effects/demon_attack1.ogg
     damage:
       types:
-        Blunt: 15
+        Blunt: 17
     altDisarm: true
     canWideSwing: false
   - type: Destructible
@@ -645,6 +657,7 @@
   parent: BaseDemon
   id: MediumDemon64
   name: angel
+  description: After consuming a great number of Hellish souls, it's possible a lowly Sinner may become an Angel. Unfortunately, they are still stuck in Hell.
   components:
   - type: Sprite
     sprite: _Trauma/Mobs/Monsters/Demons/normal.rsi
@@ -678,6 +691,7 @@
   parent: BaseDemon
   id: MajorDemonBosche
   name: bosche
+  description: Born from the dreams of a mad painter, all it knows is to consume. 
   components:
   - type: Sprite
     sprite: _Trauma/Mobs/Monsters/Demons/bosche.rsi
@@ -687,14 +701,14 @@
       path: /Audio/Effects/demon_attack1.ogg
     damage:
       types:
-        Blunt: 1
+        Blunt: 5
     altDisarm: true
     canWideSwing: false
   - type: Destructible
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 1000
+        damage: 1250
       behaviors:
       - !type:GibBehavior
         recursive: false
@@ -725,6 +739,7 @@
   parent: BaseDemon
   id: MajorDemonFeverbird
   name: feverbird
+  description: Your head hurts. Something is wrong. Onion layer one. Onion layer two. Onion layer three…
   components:
   - type: Sprite
     sprite: _Trauma/Mobs/Monsters/Demons/feverbird.rsi
@@ -778,6 +793,7 @@
   parent: BaseDemon
   id: MajorDemonHanged
   name: hanged
+  descripton: After being sent to the gallows, the souls of criminals enter the flora of Hell, they are back to exact revenge.
   components:
   - type: Sprite
     sprite: _Trauma/Mobs/Monsters/Demons/hanger.rsi
@@ -824,6 +840,7 @@
 - type: entity
   parent: BaseDemon
   id: MajorDemonHiver
+  description: Weaker demons that formed a symbiotic relationship with infernal bees. yes Hell has bees, lots of them.
   name: hiver
   components:
   - type: Sprite
@@ -870,6 +887,7 @@
   parent: BaseDemon
   id: MajorDemonSteamer
   name: steamer
+  description: Steamers are demons that were born from the souls of those who died to welderbombing. Their anger manifests as blazing oil within their gut.
   components:
   - type: Sprite
     sprite: _Trauma/Mobs/Monsters/Demons/steamer.rsi

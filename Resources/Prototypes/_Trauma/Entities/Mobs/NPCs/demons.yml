@@ -492,46 +492,6 @@
 
 - type: entity
   parent: BaseDemon
-  id: MajorDemonGhost
-  name: Spectre
-  description: Torn from their bodies, they seek to warm their hands on the warm flesh of the living.
-  components:
-  - type: Sprite
-    sprite: _Trauma/Mobs/Monsters/Demons/spectre.rsi
-  - type: MeleeWeapon
-    range: 2
-    soundHit:
-      path: /Audio/Effects/demon_attack1.ogg
-    damage:
-      types:
-        Cold: 13
-    altDisarm: false
-    canWideSwing: true
-  - type: Destructible
-    thresholds:
-    - trigger:
-        !type:DamageTrigger
-        damage: 40
-      behaviors:
-      - !type:GibBehavior
-        recursive: false
-      - !type:SpawnEntitiesBehavior
-        spawn:
-          DemonSoulFragment:
-            min: 3
-            max: 4
-  - type: Fixtures
-    fixtures:
-      projectile:
-        shape:
-          !type:PhysShapeAabb
-          bounds: "-0.1,-0.2,0.1,0.2"
-        hard: false
-        mask:
-        - Opaque
-
-- type: entity
-  parent: BaseDemon
   id: MediumDemonHamlet
   name: hellmet
   description: Bred as livestock in hell, rumors say Hellmets taste like chicken.
@@ -937,3 +897,43 @@
   - type: HTN
     rootTask:
       task: SimpleRangedHostileCompound
+
+- type: entity
+  parent: BaseDemon
+  id: MajorDemonGhost
+  name: Spectre
+  description: Torn from their bodies, they seek to warm their hands on the warm flesh of the living.
+  components:
+  - type: Sprite
+    sprite: _Trauma/Mobs/Monsters/Demons/spectre.rsi
+  - type: MeleeWeapon
+    range: 2
+    soundHit:
+      path: /Audio/Effects/demon_attack1.ogg
+    damage:
+      types:
+        Cold: 13
+    altDisarm: false
+    canWideSwing: true
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 40
+      behaviors:
+      - !type:GibBehavior
+        recursive: false
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          DemonSoulFragment:
+            min: 3
+            max: 4
+  - type: Fixtures
+    fixtures:
+      projectile:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.1,-0.2,0.1,0.2"
+        hard: false
+        mask:
+        - Opaque

@@ -499,7 +499,7 @@
   description: Torn from their bodies, they seek to warm their hands on the warm flesh of the living.
   components:
   - type: Sprite
-    sprite: Mobs/Ghosts/revenant.rsi
+    sprite: _Trauma/Mobs/Monsters/Demons/spectre.rsi
   - type: MeleeWeapon
     range: 2
     soundHit:

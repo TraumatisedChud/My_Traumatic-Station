@@ -139,7 +139,7 @@
       path: /Audio/Effects/demon_attack1.ogg
     damage:
       types:
-        Slash: 10
+        Slash: 5
       soundHit:
       collection: BikeHorn
     animation: WeaponArcFist
